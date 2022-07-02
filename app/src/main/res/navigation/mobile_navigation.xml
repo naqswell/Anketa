@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_main">
+
+    <fragment
+        android:id="@+id/navigation_main"
+        android:name="com.example.anketa.screen.main.MainFragment"
+        android:label="@string/title_main"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_home_to_login"
+            app:destination="@id/navigation_login"
+            app:popUpTo="@+id/navigation_login"
+            app:popUpToInclusive="true">
+        </action>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_responses_employer"
+        android:name="com.example.anketa.screen.responses.ResponsesEmployerFragment"
+        tools:layout="@layout/fragment_responses_employer" />
+
+    <fragment
+        android:id="@+id/navigation_profile_employer"
+        android:name="com.example.anketa.screen.profile.ProfileEmployerFragment"
+        tools:layout="@layout/fragment_profile_employer" />
+
+    <fragment
+        android:id="@+id/navigation_edit_profile_employer"
+        android:name="com.example.anketa.screen.profile.EditProfileEmployerFragment"
+        tools:layout="@layout/fragment_edit_profile_employer" />
+
+    <fragment
+        android:id="@+id/navigation_edit_profile_employee"
+        android:name="com.example.anketa.screen.profile.EditProfileEmployeeFragment"
+        tools:layout="@layout/fragment_edit_profile_employee" />
+
+
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.example.anketa.screen.login.LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_home"
+            app:destination="@id/navigation_main"
+            app:popUpTo="@+id/navigation_main"
+            app:popUpToInclusive="true">
+        </action>
+    </fragment>
+</navigation>

@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Anketa</string>
+
+    <string name="title_main">Главная</string>
+    <string name="title_responses">Отклики</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_profile">Профиль</string>
+
+    <string name="btn_continue">Продолжить</string>
+
+    <string name="description_choose_role_detail">Если вы ищете сотрудников для заведения, выберите “Работодатель”. Если вы ищете работу, выберите “Сотрудник”</string>
+    <string name="description_choose_role">Выберите роль</string>
+    <string name="employer">Работодатель</string>
+    <string name="employee">Сотрудник</string>
+    <string name="back">Назад</string>
+    <string name="fill_profile">Заполните профиль</string>
+    <string name="business_name">Название заведения</string>
+    <string name="city_name">Название города</string>
+    <string name="city">Город</string>
+    <string name="address">Адрес</string>
+    <string name="edit_txt_hint">Нажмите чтобы ввести данные</string>
+    <string name="example_address">Загородный проспект, 60</string>
+    <string name="example_restaurant_name">Cristal</string>
+    <string name="example_city_name">Санкт-Петербург</string>
+
+
+    <string name="name">Имя</string>
+    <string name="example_name">Валерий</string>
+    <string name="second_name">Фамилия</string>
+    <string name="example_second_name">Владимирович</string>
+    <string name="position">Должность</string>
+    <string name="example_position">Бармен</string>
+    <string name="salary">Зарплатные ожидания</string>
+    <string name="example_salary">60 000 руб.</string>
+    <string name="work_experience">Опыт работы</string>
+    <string name="example_work_experience">7 лет</string>
+    <string name="about_me">О себе</string>
+    <string name="example_about_me">Победитель ежегодного Московского чемпионата барменов в 2021 и 2020 годах</string>
+
+</resources>
