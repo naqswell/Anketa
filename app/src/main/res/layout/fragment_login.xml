@@ -22,7 +22,7 @@
         android:layout_marginStart="@dimen/_16ssp"
         android:text="@string/description_choose_role"
         android:fontFamily="@font/inter_black"
-        android:textSize="@dimen/text_big"
+        android:textSize="@dimen/text_huge"
         android:textColor="@color/text_color"
         app:layout_constraintBottom_toTopOf="@+id/txtview_description_choose_role_detail"
         app:layout_constraintEnd_toEndOf="parent"

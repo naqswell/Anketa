@@ -1,10 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    xmlns:tools="http://schemas.android.com/tools">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="?actionBarSize">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_horizontal_1_edit_profile_employer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <TextView
+            android:id="@+id/txtView_header_edit_employer"
+            style="@style/TextViewHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:layout_marginBottom="@dimen/_50sdp"
+            android:text="@string/fill_profile"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_1_edit_profile_employer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_home_settings"
+            style="@style/TitleButton"
+            android:drawableLeft="@drawable/ic_back_arrow"
+            android:text="@string/back"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_1_edit_profile_employer"
+            app:layout_constraintEnd_toStartOf="@+id/txtView_header_edit_employer"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlHardcoded" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?actionBarSize"
+            android:paddingTop="@dimen/_16sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_1_edit_profile_employer">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <GridLayout
+                    android:id="@+id/grid_images"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:columnCount="3"
+                    android:rowCount="3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <include
+                        layout="@layout/edit_profile_image_card"
+                        app:crossBtnVisibility="@{true}"
+                        app:plusBtnVisibility="@{false}"
+                        app:image="@{@drawable/restaurant_1}"
+                        />
+
+                    <include
+                        layout="@layout/edit_profile_image_card"
+                        app:crossBtnVisibility="@{true}"
+                        app:plusBtnVisibility="@{false}"
+                        app:image="@{@drawable/restaurant_1}"
+                        />
+
+                    <include
+                        layout="@layout/edit_profile_image_card"
+                        app:crossBtnVisibility="@{true}"
+                        app:plusBtnVisibility="@{false}"
+                        app:image="@{@drawable/restaurant_1}"
+                        />
+
+                    <!--                    <include-->
+                    <!--                        layout="@layout/edit_profile_image_card"-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_gravity="fill"-->
+                    <!--                        app:crossBtnVisibility="@{true}"-->
+                    <!--                        app:image="@{@drawable/restaurant_1}"-->
+                    <!--                        app:plusBtnVisibility="@{false}"-->
+                    <!--                        />-->
+
+                    <include
+                        layout="@layout/edit_profile_image_card"
+                        app:crossBtnVisibility="@{false}"
+                        app:plusBtnVisibility="@{true}" />
+
+                    <include
+                        layout="@layout/edit_profile_image_card"
+                        app:crossBtnVisibility="@{false}"
+                        app:plusBtnVisibility="@{true}" />
+
+                    <include
+                        layout="@layout/edit_profile_image_card"
+                        app:crossBtnVisibility="@{false}"
+                        app:plusBtnVisibility="@{true}" />
+
+                    <include
+                        layout="@layout/edit_profile_image_card"
+                        app:crossBtnVisibility="@{false}"
+                        app:plusBtnVisibility="@{true}" />
+
+                    <include
+                        layout="@layout/edit_profile_image_card"
+                        app:crossBtnVisibility="@{false}"
+                        app:plusBtnVisibility="@{true}" />
+
+                    <include
+                        layout="@layout/edit_profile_image_card"
+                        app:crossBtnVisibility="@{false}"
+                        app:plusBtnVisibility="@{true}" />
+                </GridLayout>
+
+                <include
+                    android:id="@+id/edit_txt_institution"
+                    layout="@layout/edit_text_with_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_24sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/grid_images"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:edtTxt="@{@string/example_restaurant_name}"
+                    app:titleTxt="@{@string/business_name}" />
+
+                <include
+                    android:id="@+id/edit_txt_city_name"
+                    layout="@layout/edit_text_with_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_txt_institution"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    app:titleTxt="@{@string/city}"
+                    app:edtTxt="@{@string/example_city_name}"
+                    />
+
+                <include
+                    android:id="@+id/edit_txt_address"
+                    layout="@layout/edit_text_with_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_txt_city_name"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    app:titleTxt="@{@string/address}"
+                    app:edtTxt="@{@string/example_address}"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_continue_edt_profile_employer"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_txt_address"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    style="@style/CustomButton"
+                    android:text="@string/btn_continue"
+                    >
+                </com.google.android.material.button.MaterialButton>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
