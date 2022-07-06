@@ -11,7 +11,8 @@
     <dimen name="card_corner_radius">@dimen/_16sdp</dimen>
 
     <dimen name="text_huge">@dimen/_18ssp</dimen>
-    <dimen name="text_big">@dimen/_14ssp</dimen>
+    <dimen name="text_large">@dimen/_16ssp</dimen>
+    <dimen name="text_big">@dimen/_12ssp</dimen>
     <dimen name="text_medium">@dimen/_10ssp</dimen>
 
     <dimen name="btn_corner_radius">@dimen/_32sdp</dimen>

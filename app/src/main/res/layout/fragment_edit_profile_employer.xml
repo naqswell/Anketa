@@ -74,21 +74,21 @@
                         layout="@layout/edit_profile_image_card"
                         app:crossBtnVisibility="@{true}"
                         app:plusBtnVisibility="@{false}"
-                        app:image="@{@drawable/restaurant_1}"
+                        app:image="@{@drawable/restaurant_one_1}"
                         />
 
                     <include
                         layout="@layout/edit_profile_image_card"
                         app:crossBtnVisibility="@{true}"
                         app:plusBtnVisibility="@{false}"
-                        app:image="@{@drawable/restaurant_1}"
+                        app:image="@{@drawable/restaurant_one_1}"
                         />
 
                     <include
                         layout="@layout/edit_profile_image_card"
                         app:crossBtnVisibility="@{true}"
                         app:plusBtnVisibility="@{false}"
-                        app:image="@{@drawable/restaurant_1}"
+                        app:image="@{@drawable/restaurant_one_1}"
                         />
 
                     <!--                    <include-->
@@ -141,7 +141,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/grid_images"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:edtTxt="@{@string/example_restaurant_name}"
+                    app:edtTxt="@{@string/mock_restaurant_name}"
                     app:titleTxt="@{@string/business_name}" />
 
                 <include
@@ -167,7 +167,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/edit_txt_city_name"
                     android:layout_marginTop="@dimen/_8sdp"
                     app:titleTxt="@{@string/address}"
-                    app:edtTxt="@{@string/example_address}"
+                    app:edtTxt="@{@string/mock_address}"
                     />
 
                 <com.google.android.material.button.MaterialButton

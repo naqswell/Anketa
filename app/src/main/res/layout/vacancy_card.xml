@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/employer_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardElevation="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="@dimen/_16sdp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/_16sdp">
+
+            <TextView
+                android:id="@+id/vacancy_position"
+                style="@style/CustomTitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:text="Позиция"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/vacancy_salary_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/salary_card"
+                android:textSize="@dimen/text_big"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vacancy_position" />
+
+            <TextView
+                android:id="@+id/vacancy_salary"
+                style="@style/CustomStandartText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:fontFamily="@font/inter_medium"
+                android:text="@{salaryTxt}"
+                android:textSize="@dimen/text_big"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/vacancy_salary_title"
+                app:layout_constraintTop_toBottomOf="@+id/vacancy_position" />
+
+            <TextView
+                android:id="@+id/vacancy_experience_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/experience_card"
+                android:textSize="@dimen/text_big"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vacancy_salary_title" />
+
+            <TextView
+                android:id="@+id/vacancy_experience"
+                style="@style/CustomStandartText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:fontFamily="@font/inter_medium"
+                android:text="@{experienceTxt}"
+                android:textSize="@dimen/text_big"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/vacancy_experience_title"
+                app:layout_constraintTop_toBottomOf="@+id/vacancy_salary" />
+
+            <TextView
+                android:id="@+id/vacancy_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:fontFamily="@font/inter_medium"
+                android:text="ТекстТекстТекстТекстТекстТекстТекстТекстТекстТекстТекстТекстТекстТекстТекстТекстТекстТекстТекстТекст"
+                android:textSize="@dimen/text_big"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/btn_vacancy_edit"
+                app:layout_constraintTop_toBottomOf="@+id/vacancy_experience_title"
+                android:layout_marginBottom="@dimen/_16sdp"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_vacancy_edit"
+                style="@style/CustomButton"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="@string/btn_edit"
+                app:icon="@drawable/ic_pencil"
+                app:iconGravity="textEnd"
+                app:iconTint="@color/text_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.52"
+                app:layout_constraintVertical_bias="1"
+                />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_vacancy_detail"
+                android:layout_width="@dimen/_42sdp"
+                android:layout_height="@dimen/_42sdp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                android:padding="0dp"
+                app:icon="@drawable/ic_chevron_right"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="@dimen/_42sdp"
+                app:iconTint="@android:color/transparent"
+                app:iconTintMode="src_over"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_vacancy_edit"
+                app:layout_constraintTop_toBottomOf="@+id/vacancy_detail"
+                app:layout_constraintVertical_bias="1"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_vacancy_delete"
+                android:layout_width="@dimen/_42sdp"
+                android:layout_height="@dimen/_42sdp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                android:padding="0dp"
+                app:icon="@drawable/ic_delete"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="@dimen/_42sdp"
+                app:iconTint="@android:color/transparent"
+                app:iconTintMode="src_over"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btn_vacancy_edit"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vacancy_detail"
+                app:layout_constraintVertical_bias="1"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -133,7 +133,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:titleTxt="@{@string/name}"
-                    app:edtTxt="@{@string/example_name}"
+                    app:edtTxt="@{@string/mock_name}"
                     />
 
                 <include
@@ -146,7 +146,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:titleTxt="@{@string/second_name}"
-                    app:edtTxt="@{@string/example_second_name}"
+                    app:edtTxt="@{@string/mock_second_name}"
                     />
 
                 <include
@@ -158,9 +158,8 @@
                     app:layout_constraintTop_toBottomOf="@+id/edit_txt_second_name"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginBottom="@dimen/_24sdp"
                     app:titleTxt="@{@string/position}"
-                    app:edtTxt="@{@string/example_position}"
+                    app:edtTxt="@{@string/mock_position}"
                     />
 
                 <include
@@ -186,7 +185,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:titleTxt="@{@string/salary}"
-                    app:edtTxt="@{@string/example_salary}"
+                    app:edtTxt="@{@string/mock_salary}"
                     />
 
                 <include
@@ -199,7 +198,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:titleTxt="@{@string/work_experience}"
-                    app:edtTxt="@{@string/example_work_experience}"
+                    app:edtTxt="@{@string/mock_work_experience}"
                     />
 
                 <include
@@ -212,7 +211,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:titleTxt="@{@string/about_me}"
-                    app:edtTxt="@{@string/example_about_me}"
+                    app:edtTxt="@{@string/mock_about_me}"
                     />
 
                 <com.google.android.material.button.MaterialButton
