@@ -1,7 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     dependencies {
-        def safe_args_gradle = "2.5.0-alpha01"
+        def safe_args_gradle = "2.5.0"
         classpath("androidx.navigation.safeargs:androidx.navigation.safeargs.gradle.plugin:$safe_args_gradle")
     }
     repositories {

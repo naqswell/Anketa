@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.anketa.databinding.FragmentEditProfileEmployerBinding
 
 class EditProfileEmployerFragment : Fragment() {
@@ -21,6 +22,8 @@ class EditProfileEmployerFragment : Fragment() {
 
         _binding = FragmentEditProfileEmployerBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
+        binding.btnEditProfileEmployerBack.setOnClickListener { findNavController().navigateUp() }
 
         return root
     }

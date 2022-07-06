@@ -12,7 +12,7 @@
         app:deriveConstraintsFrom="@id/start"
         >
         <Constraint
-            android:id="@id/card_profile_employer_1"
+            android:id="@id/card_profile_employer"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"

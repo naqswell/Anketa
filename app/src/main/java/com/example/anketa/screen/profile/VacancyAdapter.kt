@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 import com.example.anketa.R
+import com.example.anketa.data.profile.Vacancy
 import com.example.anketa.databinding.VacancyCardBinding
 
 class VacancyAdapter(private val onItemClicked: (Vacancy) -> Unit) :

@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.anketa.R
+import com.example.anketa.data.profile.Vacancy
 import com.example.anketa.databinding.FragmentProfileEmployerBinding
 import com.example.anketa.screen.ViewPager2Adapter
 import com.google.android.material.tabs.TabLayoutMediator
@@ -35,12 +37,21 @@ class ProfileEmployerFragment : Fragment() {
 
         _binding = FragmentProfileEmployerBinding.inflate(inflater, container, false)
         initAdapters()
+        bindEditProfileClick()
         return binding.root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun bindEditProfileClick() {
+        binding.btnProfileEmployerEdit.setOnClickListener {
+            findNavController().navigate(
+                ProfileEmployerFragmentDirections.actionProfileEmployerToEditProfileEmployer()
+            )
+        }
     }
 
     private fun initAdapters() {
@@ -59,6 +70,6 @@ class ProfileEmployerFragment : Fragment() {
     }
 
     private fun onItemClick(vacancy: Vacancy) {
-        Toast.makeText(requireContext(), vacancy.toString(), Toast.LENGTH_SHORT).show()
+        findNavController().navigate(ProfileEmployerFragmentDirections.actionProfileEmployerToVacancy(vacancy))
     }
 }

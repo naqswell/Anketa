@@ -27,12 +27,46 @@
     <fragment
         android:id="@+id/navigation_profile_employer"
         android:name="com.example.anketa.screen.profile.ProfileEmployerFragment"
-        tools:layout="@layout/fragment_profile_employer" />
+        tools:layout="@layout/fragment_profile_employer">
+        <action
+            android:id="@+id/action_profile_employer_to_edit_profile_employer"
+            app:destination="@id/navigation_edit_profile_employer"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@+id/navigation_edit_profile_employer"
+            app:popUpToInclusive="true">
+        </action>
+
+        <action
+            android:id="@+id/action_profile_employer_to_vacancy"
+            app:destination="@id/navigation_vacancy"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@+id/navigation_vacancy"
+            app:popUpToInclusive="true">
+        </action>
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_edit_profile_employer"
         android:name="com.example.anketa.screen.profile.EditProfileEmployerFragment"
-        tools:layout="@layout/fragment_edit_profile_employer" />
+        tools:layout="@layout/fragment_edit_profile_employer">
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_vacancy"
+        android:name="com.example.anketa.screen.profile.VacancyFragment"
+        tools:layout="@layout/fragment_vacancy">
+        <argument
+            android:name="vacancy"
+            app:argType="com.example.anketa.data.profile.Vacancy"
+            app:nullable="false" />
+    </fragment>
+
 
     <fragment
         android:id="@+id/navigation_edit_profile_employee"

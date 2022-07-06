@@ -33,7 +33,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_home_settings"
+            android:id="@+id/btn_edit_profile_employer_back"
             style="@style/TitleButton"
             android:drawableLeft="@drawable/ic_back_arrow"
             android:text="@string/back"
@@ -48,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="?actionBarSize"
-            android:paddingTop="@dimen/_16sdp"
+            android:paddingTop="@dimen/_8sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +63,7 @@
                     android:id="@+id/grid_images"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
                     android:columnCount="3"
                     android:rowCount="3"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -177,6 +177,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     style="@style/CustomButton"
                     android:text="@string/btn_continue"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     >
                 </com.google.android.material.button.MaterialButton>
             </androidx.constraintlayout.widget.ConstraintLayout>
