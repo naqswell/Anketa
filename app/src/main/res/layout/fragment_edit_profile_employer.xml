@@ -134,7 +134,7 @@
 
                 <include
                     android:id="@+id/edit_txt_institution"
-                    layout="@layout/edit_text_with_title"
+                    layout="@layout/edit_text_with_title_databinding"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_24sdp"
@@ -146,7 +146,7 @@
 
                 <include
                     android:id="@+id/edit_txt_city_name"
-                    layout="@layout/edit_text_with_title"
+                    layout="@layout/edit_text_with_title_databinding"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toBottomOf="@+id/edit_txt_institution"
@@ -159,7 +159,7 @@
 
                 <include
                     android:id="@+id/edit_txt_address"
-                    layout="@layout/edit_text_with_title"
+                    layout="@layout/edit_text_with_title_databinding"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="parent"

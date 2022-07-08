@@ -22,7 +22,6 @@ class ProfileEmployerFragment : Fragment() {
     private lateinit var vacancyAdapter: VacancyAdapter
     private lateinit var imageAdapter: ViewPager2Adapter
 
-
     val images1 = arrayOf(
         R.drawable.restaurant_one_1,
         R.drawable.restaurant_one_1,
@@ -34,11 +33,12 @@ class ProfileEmployerFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         _binding = FragmentProfileEmployerBinding.inflate(inflater, container, false)
-        initAdapters()
-        bindEditProfileClick()
-        return binding.root
+
+        return binding.apply {
+            initAdapters()
+            bindEditProfileClick()
+        }.root
     }
 
     override fun onDestroyView() {
@@ -70,6 +70,10 @@ class ProfileEmployerFragment : Fragment() {
     }
 
     private fun onItemClick(vacancy: Vacancy) {
-        findNavController().navigate(ProfileEmployerFragmentDirections.actionProfileEmployerToVacancy(vacancy))
+        findNavController().navigate(
+            ProfileEmployerFragmentDirections.actionProfileEmployerToVacancy(
+                vacancy
+            )
+        )
     }
 }

@@ -27,6 +27,11 @@
     <string name="address">Адрес</string>
     <string name="edit_txt_hint">Нажмите чтобы ввести данные</string>
 
+    <string name="vacancy_edit_txt_title">Название вакансии</string>
+    <string name="salary_edit_txt_title">Зарплата</string>
+    <string name="experience_edit_txt_title">Требуемый опыт</string>
+    <string name="detail_edit_txt_title">Описание вакансии</string>
+
     <string name="mock_address">Загородный проспект, 60</string>
     <string name="mock_restaurant_name">Cristal</string>
     <string name="example_city_name">Санкт-Петербург</string>
