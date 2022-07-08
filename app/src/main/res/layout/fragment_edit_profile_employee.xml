@@ -22,7 +22,7 @@
             app:layout_constraintGuide_percent="0.1" />
 
         <TextView
-            android:id="@+id/txtView_header_edit_employer"
+            android:id="@+id/txtView_header_center_edit_employer"
             style="@style/TextViewHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -40,7 +40,7 @@
             android:drawableLeft="@drawable/ic_back_arrow"
             android:text="@string/back"
             app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_1_edit_profile_employer"
-            app:layout_constraintEnd_toStartOf="@+id/txtView_header_edit_employer"
+            app:layout_constraintEnd_toStartOf="@+id/txtView_header_center_edit_employer"
             app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

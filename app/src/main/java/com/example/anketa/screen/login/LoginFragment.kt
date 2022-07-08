@@ -43,24 +43,23 @@ class LoginFragment : Fragment() {
     ): View {
 
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        return binding.apply {
+            val action = LoginFragmentDirections.actionLoginToHome()
 
-        val action = LoginFragmentDirections.actionLoginToHome()
+            with(binding) {
+                btnEmployer.setOnClickListener {
+                    prefs.role = Role.Employer
+                    callbacks.onRoleSet()
+                    findNavController().navigate(action)
+                }
 
-        with(binding) {
-            btnEmployer.setOnClickListener {
-                prefs.role = Role.Employer
-                callbacks.onRoleSet()
-                findNavController().navigate(action)
+                btnEmployee.setOnClickListener {
+                    prefs.role = Role.Employee
+                    callbacks.onRoleSet()
+                    findNavController().navigate(action)
+                }
             }
-
-            btnEmployee.setOnClickListener {
-                prefs.role = Role.Employee
-                callbacks.onRoleSet()
-                findNavController().navigate(action)
-            }
-        }
-
-        return binding.root
+        }.root
     }
 
     override fun onDestroyView() {

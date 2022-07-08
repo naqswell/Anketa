@@ -19,30 +19,60 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.1" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_edit_profile_employer_back"
+            style="@style/TitleButton"
+            android:textColor="@color/green_main"
+            android:drawableLeft="@drawable/ic_back_arrow"
+            android:text="@string/back"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_1_edit_profile_employer"
+            app:layout_constraintEnd_toStartOf="@+id/txtView_header_center_edit_employer"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlHardcoded"
+            android:visibility="gone"
+            />
+
         <TextView
-            android:id="@+id/txtView_header_edit_employer"
+            android:id="@+id/txtView_header_center_edit_employer"
             style="@style/TextViewHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_50sdp"
-            android:layout_marginBottom="@dimen/_50sdp"
             android:text="@string/fill_profile"
             app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_1_edit_profile_employer"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"
+            />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_edit_profile_employer_back"
+            android:id="@+id/btn_edit_profile_employer_decline"
             style="@style/TitleButton"
-            android:drawableLeft="@drawable/ic_back_arrow"
-            android:text="@string/back"
+            android:text="@string/decline"
+            android:textColor="@color/green_main"
             app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_1_edit_profile_employer"
-            app:layout_constraintEnd_toStartOf="@+id/txtView_header_edit_employer"
-            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="RtlHardcoded" />
+            tools:ignore="RtlHardcoded"
+            />
+
+        <TextView
+            android:id="@+id/txtView_header_start_edit_employer"
+            style="@style/TextViewHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/edit_profile"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_1_edit_profile_employer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            android:layout_marginStart="@dimen/_16sdp"
+            />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -81,30 +111,22 @@
                         layout="@layout/edit_profile_image_card"
                         app:crossBtnVisibility="@{true}"
                         app:plusBtnVisibility="@{false}"
-                        app:image="@{@drawable/restaurant_one_1}"
+                        app:image="@{@drawable/restaurant_one_2}"
                         />
 
                     <include
                         layout="@layout/edit_profile_image_card"
                         app:crossBtnVisibility="@{true}"
                         app:plusBtnVisibility="@{false}"
-                        app:image="@{@drawable/restaurant_one_1}"
+                        app:image="@{@drawable/restaurant_one_3}"
                         />
-
-                    <!--                    <include-->
-                    <!--                        layout="@layout/edit_profile_image_card"-->
-                    <!--                        android:layout_width="match_parent"-->
-                    <!--                        android:layout_height="wrap_content"-->
-                    <!--                        android:layout_gravity="fill"-->
-                    <!--                        app:crossBtnVisibility="@{true}"-->
-                    <!--                        app:image="@{@drawable/restaurant_1}"-->
-                    <!--                        app:plusBtnVisibility="@{false}"-->
-                    <!--                        />-->
 
                     <include
                         layout="@layout/edit_profile_image_card"
-                        app:crossBtnVisibility="@{false}"
-                        app:plusBtnVisibility="@{true}" />
+                        app:crossBtnVisibility="@{true}"
+                        app:plusBtnVisibility="@{false}"
+                        app:image="@{@drawable/restaurant_one_4}"
+                        />
 
                     <include
                         layout="@layout/edit_profile_image_card"
@@ -170,17 +192,31 @@
                     app:edtTxt="@{@string/mock_address}"
                     />
 
+                <include
+                    android:id="@+id/btn_instagram_profile_employer"
+                    layout="@layout/connect_to_instagram"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_txt_address"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_continue_edt_profile_employer"
-                    app:layout_constraintTop_toBottomOf="@+id/edit_txt_address"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_instagram_profile_employer"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     style="@style/CustomButton"
                     android:text="@string/btn_continue"
+                    android:layout_marginTop="@dimen/_8sdp"
+
                     android:layout_marginBottom="@dimen/_8sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     >
                 </com.google.android.material.button.MaterialButton>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
 
