@@ -1,5 +1,6 @@
 package com.example.anketa.screen.profile
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -20,6 +21,7 @@ class ProfileEmployerFragment : Fragment() {
 
     private lateinit var vacancyAdapter: VacancyAdapter
     private lateinit var imageAdapter: ViewPager2Adapter
+    private var callbacks: NavBarCallbacks? = null
 
     val images1 = arrayOf(
         R.drawable.restaurant_one_1,
@@ -27,6 +29,11 @@ class ProfileEmployerFragment : Fragment() {
         R.drawable.restaurant_one_3,
         R.drawable.restaurant_one_4,
     )
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        callbacks = context as NavBarCallbacks
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -48,8 +55,9 @@ class ProfileEmployerFragment : Fragment() {
 
     private fun bindEditProfileClick() {
         binding.btnProfileEmployerEdit.setOnClickListener {
+            callbacks?.hideNavBar()
             findNavController().navigate(
-                ProfileEmployerFragmentDirections.actionProfileEmployerToEditProfileEmployer()
+                ProfileEmployerFragmentDirections.actionProfileEmployerToEditProfileEmployer(false)
             )
         }
     }
@@ -75,5 +83,10 @@ class ProfileEmployerFragment : Fragment() {
                 vacancy
             )
         )
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        callbacks = null
     }
 }

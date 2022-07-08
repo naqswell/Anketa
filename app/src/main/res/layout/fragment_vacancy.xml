@@ -3,39 +3,106 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <include
-            android:id="@+id/vacancy_position"
-            layout="@layout/edit_text_with_title"
-            android:layout_width="match_parent"
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_horizontal_1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_24sdp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1" />
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_decline"
+            style="@style/TitleButton"
+            android:text="@string/decline"
+            android:textColor="@color/green_main"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlHardcoded"
             />
 
-        <include
-            android:id="@+id/vacancy_salary"
-            layout="@layout/edit_text_with_title"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/header_start"
+            style="@style/TextViewHeader"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_8sdp" />
+            android:text="@string/title_new_position"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            android:layout_marginStart="@dimen/_16sdp"
+            />
 
-        <include
-            android:id="@+id/vacancy_experience"
-            layout="@layout/edit_text_with_title"
+        <ScrollView
+            android:id="@+id/scrollView2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_8sdp" />
+            android:layout_height="match_parent"
+            android:layout_marginTop="?actionBarSize"
+            android:layout_marginBottom="@dimen/_80sdp"
+            android:paddingTop="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_1">
 
-        <include
-            android:id="@+id/vacancy_about"
-            layout="@layout/edit_text_with_title_big"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_8sdp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/guideline_horizontal_1"
+                app:layout_constraintVertical_bias="0">
 
-    </LinearLayout>
+                <include
+                    android:id="@+id/vacancy_position"
+                    layout="@layout/edit_text_with_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_24sdp" />
+
+                <include
+                    android:id="@+id/vacancy_salary"
+                    layout="@layout/edit_text_with_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp" />
+
+                <include
+                    android:id="@+id/vacancy_experience"
+                    layout="@layout/edit_text_with_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp" />
+
+                <include
+                    android:id="@+id/vacancy_about"
+                    layout="@layout/edit_text_with_title_big"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_share"
+            style="@style/CustomButton"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:text="@string/btn_share_position"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+            >
+        </com.google.android.material.button.MaterialButton>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

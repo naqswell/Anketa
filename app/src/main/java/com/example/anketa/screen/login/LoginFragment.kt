@@ -14,25 +14,12 @@ import com.example.anketa.prefs
 
 class LoginFragment : Fragment() {
 
-    interface Callbacks {
-        fun onRoleSet()
-    }
-
     private var _binding: FragmentLoginBinding? = null
-
     private val binding get() = _binding!!
-    private lateinit var callbacks: Callbacks
-
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        callbacks = context as Callbacks
-    }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
+        requireActivity().onBackPressedDispatcher.addCallback(this) {
         }
     }
 
@@ -44,19 +31,18 @@ class LoginFragment : Fragment() {
 
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.apply {
-            val action = LoginFragmentDirections.actionLoginToHome()
 
+            val actionToEmployer = LoginFragmentDirections.actionLoginToEditProfileEmployer(true)
             with(binding) {
                 btnEmployer.setOnClickListener {
                     prefs.role = Role.Employer
-                    callbacks.onRoleSet()
-                    findNavController().navigate(action)
+                    findNavController().navigate(actionToEmployer)
                 }
 
+                val actionToEmployee = LoginFragmentDirections.actionLoginToEditProfileEmployer(true)
                 btnEmployee.setOnClickListener {
                     prefs.role = Role.Employee
-                    callbacks.onRoleSet()
-                    findNavController().navigate(action)
+                    findNavController().navigate(actionToEmployee)
                 }
             }
         }.root

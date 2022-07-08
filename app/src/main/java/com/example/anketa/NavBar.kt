@@ -7,10 +7,10 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.anketa.data.Role
 import com.example.anketa.databinding.ActivityMainBinding
-import com.example.anketa.screen.login.LoginFragment
+import com.example.anketa.screen.profile.NavBarCallbacks
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class MainActivity : AppCompatActivity(), LoginFragment.Callbacks {
+class NavBar : AppCompatActivity(), NavBarCallbacks{
 
     private lateinit var binding: ActivityMainBinding
 
@@ -35,7 +35,13 @@ class MainActivity : AppCompatActivity(), LoginFragment.Callbacks {
         }
     }
 
-    override fun onRoleSet() {
+    override fun showNavBar() {
         binding.navView.visibility = View.VISIBLE
     }
+
+    override fun hideNavBar() {
+        binding.navView.visibility = View.GONE
+    }
+
+
 }

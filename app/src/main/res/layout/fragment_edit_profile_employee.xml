@@ -15,21 +15,21 @@
         >
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_horizontal_1_edit_profile_employer"
+            android:id="@+id/guideline_horizontal_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.1" />
 
         <TextView
-            android:id="@+id/txtView_header_center_edit_employer"
+            android:id="@+id/header_center"
             style="@style/TextViewHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_50sdp"
             android:layout_marginBottom="@dimen/_50sdp"
-            android:text="@string/fill_profile"
-            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_1_edit_profile_employer"
+            android:text="@string/title_fill_profile"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -39,8 +39,8 @@
             style="@style/TitleButton"
             android:drawableLeft="@drawable/ic_back_arrow"
             android:text="@string/back"
-            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_1_edit_profile_employer"
-            app:layout_constraintEnd_toStartOf="@+id/txtView_header_center_edit_employer"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_1"
+            app:layout_constraintEnd_toStartOf="@+id/header_center"
             app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -54,7 +54,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_1_edit_profile_employer">
+            app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_1">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"

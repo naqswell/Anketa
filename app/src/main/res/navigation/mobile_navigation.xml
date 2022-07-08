@@ -55,6 +55,16 @@
         android:id="@+id/navigation_edit_profile_employer"
         android:name="com.example.anketa.screen.profile.EditProfileEmployerFragment"
         tools:layout="@layout/fragment_edit_profile_employer">
+        <argument
+            android:name="isLogin"
+            app:argType="boolean"
+            app:nullable="false" />
+        <action
+            android:id="@+id/action_to_home"
+            app:destination="@id/navigation_main"
+            app:popUpTo="@+id/navigation_main"
+            app:popUpToInclusive="true">
+        </action>
     </fragment>
 
     <fragment
@@ -71,7 +81,13 @@
     <fragment
         android:id="@+id/navigation_edit_profile_employee"
         android:name="com.example.anketa.screen.profile.EditProfileEmployeeFragment"
-        tools:layout="@layout/fragment_edit_profile_employee" />
+        tools:layout="@layout/fragment_edit_profile_employee"
+        >
+        <argument
+            android:name="isLogin"
+            app:argType="boolean"
+            app:nullable="false" />
+    </fragment>
 
 
     <fragment
@@ -82,6 +98,18 @@
             android:id="@+id/action_login_to_home"
             app:destination="@id/navigation_main"
             app:popUpTo="@+id/navigation_main"
+            app:popUpToInclusive="true">
+        </action>
+        <action
+            android:id="@+id/action_login_to_edit_profile_employer"
+            app:destination="@id/navigation_edit_profile_employer"
+            app:popUpTo="@+id/navigation_edit_profile_employer"
+            app:popUpToInclusive="true">
+        </action>
+        <action
+            android:id="@+id/action_login_to_edit_profile_employee"
+            app:destination="@id/navigation_edit_profile_employee"
+            app:popUpTo="@+id/navigation_edit_profile_employee"
             app:popUpToInclusive="true">
         </action>
     </fragment>
