@@ -11,7 +11,7 @@
         android:label="@string/title_main"
         tools:layout="@layout/fragment_main">
         <action
-            android:id="@+id/action_home_to_login"
+            android:id="@+id/action_to_login"
             app:destination="@id/navigation_login"
             app:popUpTo="@+id/navigation_login"
             app:popUpToInclusive="true">
@@ -52,22 +52,6 @@
     </fragment>
 
     <fragment
-        android:id="@+id/navigation_edit_profile_employer"
-        android:name="com.example.anketa.screen.profile.EditProfileEmployerFragment"
-        tools:layout="@layout/fragment_edit_profile_employer">
-        <argument
-            android:name="isLogin"
-            app:argType="boolean"
-            app:nullable="false" />
-        <action
-            android:id="@+id/action_to_home"
-            app:destination="@id/navigation_main"
-            app:popUpTo="@+id/navigation_main"
-            app:popUpToInclusive="true">
-        </action>
-    </fragment>
-
-    <fragment
         android:id="@+id/navigation_vacancy"
         android:name="com.example.anketa.screen.profile.VacancyFragment"
         tools:layout="@layout/fragment_vacancy">
@@ -78,15 +62,42 @@
     </fragment>
 
 
+
+    <fragment
+        android:id="@+id/navigation_edit_profile_employer"
+        android:name="com.example.anketa.screen.profile.EditProfileEmployerFragment"
+        tools:layout="@layout/fragment_edit_profile_employer">
+        <argument
+            android:name="isLogin"
+            app:argType="boolean"
+            app:nullable="false"
+            android:defaultValue="false"
+            />
+        <action
+            android:id="@+id/action_to_home"
+            app:destination="@id/navigation_main"
+            app:popUpTo="@+id/navigation_main"
+            app:popUpToInclusive="true">
+        </action>
+    </fragment>
+
     <fragment
         android:id="@+id/navigation_edit_profile_employee"
         android:name="com.example.anketa.screen.profile.EditProfileEmployeeFragment"
         tools:layout="@layout/fragment_edit_profile_employee"
         >
+        <action
+            android:id="@+id/action_to_home"
+            app:destination="@id/navigation_main"
+            app:popUpTo="@+id/navigation_main"
+            app:popUpToInclusive="true">
+        </action>
         <argument
             android:name="isLogin"
             app:argType="boolean"
-            app:nullable="false" />
+            app:nullable="false"
+            android:defaultValue="false"
+            />
     </fragment>
 
 

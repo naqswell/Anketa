@@ -63,11 +63,16 @@
         <entry key="..\:/Projects/Android/1My/Anketa/app/src/main/res/layout/connect_to_instagram.xml" value="0.33" />
         <entry key="..\:/Projects/Android/1My/Anketa/app/src/main/res/layout/edit_profile_image_card.xml" value="0.36302083333333335" />
         <entry key="..\:/Projects/Android/1My/Anketa/app/src/main/res/layout/edit_text_with_title.xml" value="0.36302083333333335" />
+        <entry key="..\:/Projects/Android/1My/Anketa/app/src/main/res/layout/edit_text_with_title_big.xml" value="0.36302083333333335" />
         <entry key="..\:/Projects/Android/1My/Anketa/app/src/main/res/layout/edit_text_with_title_databinding.xml" value="0.36302083333333335" />
+        <entry key="..\:/Projects/Android/1My/Anketa/app/src/main/res/layout/fragment_edit_profile_employee.xml" value="0.2427536231884058" />
         <entry key="..\:/Projects/Android/1My/Anketa/app/src/main/res/layout/fragment_edit_profile_employer.xml" value="0.25" />
+        <entry key="..\:/Projects/Android/1My/Anketa/app/src/main/res/layout/fragment_login.xml" value="0.36302083333333335" />
+        <entry key="..\:/Projects/Android/1My/Anketa/app/src/main/res/layout/fragment_profile_employee.xml" value="0.36302083333333335" />
         <entry key="..\:/Projects/Android/1My/Anketa/app/src/main/res/layout/fragment_profile_employer.xml" value="0.2595108695652174" />
         <entry key="..\:/Projects/Android/1My/Anketa/app/src/main/res/layout/fragment_vacancy.xml" value="0.36302083333333335" />
         <entry key="..\:/Projects/Android/1My/Anketa/app/src/main/res/layout/vacancy_card.xml" value="0.5" />
+        <entry key="..\:/Projects/Android/1My/Anketa/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36302083333333335" />
       </map>
     </option>
   </component>

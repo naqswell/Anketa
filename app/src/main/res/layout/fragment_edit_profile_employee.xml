@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -9,10 +8,10 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="?actionBarSize"
-        >
+        android:layout_marginBottom="?actionBarSize">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_horizontal_1"
@@ -21,81 +20,126 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.1" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_back"
+            style="@style/TitleButton"
+            android:textColor="@color/green_main"
+            android:drawableLeft="@drawable/ic_back_arrow"
+            android:text="@string/back"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_1"
+            app:layout_constraintEnd_toStartOf="@+id/header_center_fill_profile"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlHardcoded"
+            android:visibility="gone"
+            />
+
         <TextView
-            android:id="@+id/header_center"
+            android:id="@+id/header_center_fill_profile"
             style="@style/TextViewHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_50sdp"
-            android:layout_marginBottom="@dimen/_50sdp"
             android:text="@string/title_fill_profile"
             app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"
+            />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_home_settings"
-            style="@style/TitleButton"
-            android:drawableLeft="@drawable/ic_back_arrow"
-            android:text="@string/back"
+        <TextView
+            android:id="@+id/header_center_your_profile"
+            style="@style/TextViewHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_your_profile"
             app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_1"
-            app:layout_constraintEnd_toStartOf="@+id/header_center"
-            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="RtlHardcoded" />
+            android:visibility="gone"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_decline"
+            style="@style/TitleButton"
+            android:text="@string/decline"
+            android:textColor="@color/green_main"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlHardcoded"
+            />
+
+        <TextView
+            android:id="@+id/header_start"
+            style="@style/TextViewHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_edit_profile"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            android:layout_marginStart="@dimen/_16sdp"
+            />
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="?actionBarSize"
-            android:paddingTop="@dimen/_16sdp"
+            android:paddingTop="@dimen/_8sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_1">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
 
                 <GridLayout
                     android:id="@+id/grid_images"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_margin="@dimen/_8sdp"
                     android:columnCount="3"
                     android:rowCount="3"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    >
 
                     <include
                         layout="@layout/edit_profile_image_card"
                         app:crossBtnVisibility="@{true}"
-                        app:image="@{@drawable/person_1}"
-                        app:plusBtnVisibility="@{false}" />
+                        app:plusBtnVisibility="@{false}"
+                        app:image="@{@drawable/person_one_1}"
+                        />
 
                     <include
                         layout="@layout/edit_profile_image_card"
                         app:crossBtnVisibility="@{true}"
-                        app:image="@{@drawable/person_1}"
-                        app:plusBtnVisibility="@{false}" />
+                        app:plusBtnVisibility="@{false}"
+                        app:image="@{@drawable/person_one_2}"
+                        />
 
                     <include
                         layout="@layout/edit_profile_image_card"
                         app:crossBtnVisibility="@{true}"
-                        app:image="@{@drawable/person_1}"
-                        app:plusBtnVisibility="@{false}" />
-
+                        app:plusBtnVisibility="@{false}"
+                        app:image="@{@drawable/person_one_3}"
+                        />
 
                     <include
                         layout="@layout/edit_profile_image_card"
-                        app:crossBtnVisibility="@{false}"
-                        app:plusBtnVisibility="@{true}" />
+                        app:crossBtnVisibility="@{true}"
+                        app:plusBtnVisibility="@{false}"
+                        />
 
                     <include
                         layout="@layout/edit_profile_image_card"
@@ -128,10 +172,6 @@
                     layout="@layout/edit_text_with_title_databinding"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_24sdp"
-                    app:layout_constraintTop_toBottomOf="@+id/grid_images"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:titleTxt="@{@string/name}"
                     app:edtTxt="@{@string/mock_name}"
                     />
@@ -141,38 +181,17 @@
                     layout="@layout/edit_text_with_title_databinding"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_8sdp"
-                    app:layout_constraintTop_toBottomOf="@+id/edit_txt_name"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:titleTxt="@{@string/second_name}"
                     app:edtTxt="@{@string/mock_second_name}"
                     />
 
                 <include
-                    android:id="@+id/edit_txt_position"
+                    android:id="@+id/edit_txt_address"
                     layout="@layout/edit_text_with_title_databinding"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_8sdp"
-                    app:layout_constraintTop_toBottomOf="@+id/edit_txt_second_name"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:titleTxt="@{@string/position}"
                     app:edtTxt="@{@string/mock_position}"
-                    />
-
-                <include
-                    android:id="@+id/edit_txt_city_name"
-                    layout="@layout/edit_text_with_title_databinding"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_8sdp"
-                    app:layout_constraintTop_toBottomOf="@+id/edit_txt_position"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:titleTxt="@{@string/city}"
-                    app:edtTxt="@{@string/example_city_name}"
                     />
 
                 <include
@@ -180,10 +199,6 @@
                     layout="@layout/edit_text_with_title_databinding"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_8sdp"
-                    app:layout_constraintTop_toBottomOf="@+id/edit_txt_city_name"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:titleTxt="@{@string/salary}"
                     app:edtTxt="@{@string/mock_salary}"
                     />
@@ -193,10 +208,6 @@
                     layout="@layout/edit_text_with_title_databinding"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_8sdp"
-                    app:layout_constraintTop_toBottomOf="@+id/edit_txt_salary"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:titleTxt="@{@string/work_experience}"
                     app:edtTxt="@{@string/mock_work_experience}"
                     />
@@ -206,24 +217,26 @@
                     layout="@layout/edit_text_with_title_databinding"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_8sdp"
-                    app:layout_constraintTop_toBottomOf="@+id/edit_txt_work_experience"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:titleTxt="@{@string/about_me}"
                     app:edtTxt="@{@string/mock_about_me}"
                     />
 
+                <include
+                    android:id="@+id/btn_instagram"
+                    layout="@layout/connect_to_instagram"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_continue_edt_profile_employee"
-                    app:layout_constraintTop_toBottomOf="@+id/edit_txt_about_me"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    android:id="@+id/btn_continue"
                     style="@style/CustomButton"
                     android:text="@string/btn_continue"
+                    android:visibility="gone"
                     >
                 </com.google.android.material.button.MaterialButton>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
         </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

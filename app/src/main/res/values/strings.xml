@@ -24,8 +24,9 @@
     <string name="back">Назад</string>
     <string name="decline">Отмена</string>
     <string name="title_fill_profile">Заполните профиль</string>
+    <string name="title_your_profile">Ваш профиль</string>
     <string name="title_edit_profile">Редактирование профиля</string>
-    <string name="title_new_position">Новая вакансия</string>
+    <string name="title_position">Вакансия</string>
     <string name="business_name">Название заведения</string>
     <string name="city_name">Название города</string>
     <string name="city">Город</string>
@@ -42,12 +43,12 @@
     <string name="example_city_name">Санкт-Петербург</string>
 
 
-    <string name="mock_name">Валерий</string>
-    <string name="mock_second_name">Владимирович</string>
-    <string name="mock_position">Бармен</string>
-    <string name="mock_salary">60 000 руб.</string>
-    <string name="mock_work_experience">7 лет</string>
-    <string name="mock_about_me">Победитель ежегодного Московского чемпионата барменов в 2021 и 2020 годах</string>
+    <string name="mock_name">Оксана</string>
+    <string name="mock_second_name">Васильева</string>
+    <string name="mock_position">Официант</string>
+    <string name="mock_salary">70 000 – 90 000 руб.</string>
+    <string name="mock_work_experience">более 5-ти лет</string>
+    <string name="mock_about_me">Увлечена любимым делом, обожаю встречать гостей и длать все, чтобы людям в заведении было комфортно и удобно</string>
 
     <string name="mock_vacancy_position_1">Официант</string>
     <string name="mock_vacancy_salary_1">50 000 – 60 000 руб.</string>

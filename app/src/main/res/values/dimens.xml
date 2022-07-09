@@ -16,4 +16,7 @@
     <dimen name="text_medium">@dimen/_10ssp</dimen>
 
     <dimen name="btn_corner_radius">@dimen/_32sdp</dimen>
+    <dimen name="btn_height">@dimen/_44sdp</dimen>
+
+    <dimen name="btn_and_24sdp">@dimen/_68sdp</dimen>
 </resources>

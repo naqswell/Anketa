@@ -62,7 +62,7 @@ class EditProfileEmployerFragment : Fragment() {
             if (args.isLogin) {
                 headerStart.visibility = View.GONE
                 btnDecline.visibility = View.GONE
-                headerCenter.visibility = View.VISIBLE
+                headerCenterFillProfile.visibility = View.VISIBLE
                 btnBack.visibility = View.VISIBLE
 
                 btnBack.setOnClickListener { findNavController().navigateUp() }

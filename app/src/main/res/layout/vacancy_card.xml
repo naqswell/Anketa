@@ -117,7 +117,7 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_vacancy_edit"
                 style="@style/CustomButton"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_marginTop="@dimen/_8sdp"
                 android:background="?android:attr/selectableItemBackground"
                 android:paddingStart="@dimen/_16sdp"
@@ -131,7 +131,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1"
-                app:layout_constraintWidth_percent="0.52"
                 android:layout_marginBottom="@dimen/_2sdp"
                 />
 

@@ -39,7 +39,7 @@ class LoginFragment : Fragment() {
                     findNavController().navigate(actionToEmployer)
                 }
 
-                val actionToEmployee = LoginFragmentDirections.actionLoginToEditProfileEmployer(true)
+                val actionToEmployee = LoginFragmentDirections.actionLoginToEditProfileEmployee(true)
                 btnEmployee.setOnClickListener {
                     prefs.role = Role.Employee
                     findNavController().navigate(actionToEmployee)
