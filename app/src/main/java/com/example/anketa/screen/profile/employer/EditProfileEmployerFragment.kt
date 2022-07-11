@@ -1,4 +1,4 @@
-package com.example.anketa.screen.profile
+package com.example.anketa.screen.profile.employer
 
 import android.content.Context
 import android.os.Bundle
@@ -10,14 +10,17 @@ import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.anketa.data.Role
 import com.example.anketa.databinding.FragmentEditProfileEmployerBinding
+import com.example.anketa.prefs
+import com.example.anketa.screen.profile.NavBarCallbacks
 
 class EditProfileEmployerFragment : Fragment() {
 
     private var _binding: FragmentEditProfileEmployerBinding? = null
     private val binding get() = _binding!!
 
-    private val args: EditProfileEmployeeFragmentArgs by navArgs()
+    private val args: EditProfileEmployerFragmentArgs by navArgs()
     private var callbacks: NavBarCallbacks? = null
 
     override fun onAttach(context: Context) {
@@ -29,7 +32,9 @@ class EditProfileEmployerFragment : Fragment() {
         super.onCreate(savedInstanceState)
         requireActivity().onBackPressedDispatcher.addCallback(this) {
             findNavController().navigateUp()
-            callbacks?.showNavBar()
+            if (prefs.isProfileDataSet) {
+                callbacks?.showNavBar()
+            }
         }
     }
 
@@ -42,7 +47,6 @@ class EditProfileEmployerFragment : Fragment() {
 
         return binding.apply {
             callbacks?.hideNavBar()
-            setBottomMargin(binding, resources.getDimensionPixelSize(com.intuit.sdp.R.dimen._16sdp))
             initUI(this)
         }.root
     }
@@ -59,27 +63,56 @@ class EditProfileEmployerFragment : Fragment() {
 
     private fun initUI(binding: FragmentEditProfileEmployerBinding) {
         with(binding) {
+//            scrollView.post { scrollView.smoothScrollTo(0, scrollView.getChildAt(0).height) }
             if (args.isLogin) {
-                headerStart.visibility = View.GONE
-                btnDecline.visibility = View.GONE
-                headerCenterFillProfile.visibility = View.VISIBLE
-                btnBack.visibility = View.VISIBLE
+                View.GONE.let {
+                    headerStart.visibility = it
+                    btnDecline.visibility = it
+                    btnInstagram.layout.visibility = it
+                    btnLogout.visibility = it
+                    btnSave.visibility = it
+                }
+
+                View.VISIBLE.let {
+                    headerCenterFillProfile.visibility = it
+                    btnBack.visibility = it
+                    btnContinue.visibility = it
+                }
 
                 btnBack.setOnClickListener { findNavController().navigateUp() }
 
-                btnContinue.apply {
-                    visibility = View.VISIBLE
-                    setOnClickListener {
-                        callbacks?.showNavBar()
-                        findNavController().navigate(
-                            EditProfileEmployerFragmentDirections.actionToHome()
-                        )
-                    }
+                btnContinue.setOnClickListener {
+                    callbacks?.showNavBar()
+                    prefs.isProfileDataSet = true
+                    findNavController().navigate(
+                        EditProfileEmployerFragmentDirections.actionToHome()
+                    )
                 }
+
             } else {
+//                scrollView.updatePadding(bottom = resources.getDimensionPixelSize(com.intuit.sdp.R.dimen._32sdp))
+
+                View.VISIBLE.let {
+                    btnLogout.visibility = it
+                    btnSave.visibility = it
+                }
+
+                btnContinue.visibility = View.GONE
+
+                btnSave.setOnClickListener {
+                    callbacks?.showNavBar()
+                    findNavController().navigateUp()
+                }
+
                 btnDecline.setOnClickListener {
                     callbacks?.showNavBar()
                     findNavController().navigateUp()
+                }
+
+                btnLogout.setOnClickListener {
+                    prefs.isProfileDataSet = false
+                    prefs.role = Role.Empty
+                    findNavController().navigate(EditProfileEmployerFragmentDirections.actionToLogin())
                 }
             }
         }

@@ -7,6 +7,7 @@
     <string name="title_profile">Профиль</string>
 
     <string name="btn_continue">Продолжить</string>
+    <string name="btn_save">Сохранить</string>
     <string name="btn_share_position">Опубликовать</string>
     <string name="btn_edit">Редактировать</string>
     <string name="btn_connect_instagram">Подключить инстаграм</string>
@@ -21,8 +22,9 @@
     <string name="description_choose_role">Выберите роль</string>
     <string name="employer">Работодатель</string>
     <string name="employee">Сотрудник</string>
-    <string name="back">Назад</string>
-    <string name="decline">Отмена</string>
+    <string name="btn_back">Назад</string>
+    <string name="btn_decline">Отмена</string>
+    <string name="btn_logout">Выйти из профиля</string>
     <string name="title_fill_profile">Заполните профиль</string>
     <string name="title_your_profile">Ваш профиль</string>
     <string name="title_edit_profile">Редактирование профиля</string>

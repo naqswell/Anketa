@@ -1,4 +1,4 @@
-package com.example.anketa.screen.profile
+package com.example.anketa.screen.profile.employer
 
 import android.content.Context
 import android.os.Bundle
@@ -12,6 +12,8 @@ import com.example.anketa.R
 import com.example.anketa.data.profile.Vacancy
 import com.example.anketa.databinding.FragmentProfileEmployerBinding
 import com.example.anketa.screen.ViewPager2Adapter
+import com.example.anketa.screen.profile.NavBarCallbacks
+import com.example.anketa.screen.profile.VacancyAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 
 class ProfileEmployerFragment : Fragment() {
@@ -47,6 +49,16 @@ class ProfileEmployerFragment : Fragment() {
             bindEditProfileClick()
         }.root
     }
+
+//    override fun onResume() {
+//        super.onResume()
+//        binding.recyclerProfileEmployer.adapter?.notifyDataSetChanged()
+//    }
+//
+//    override fun onPause() {
+//        super.onPause()
+//        binding.recyclerProfileEmployer.adapter?.notifyDataSetChanged()
+//    }
 
     override fun onDestroyView() {
         super.onDestroyView()

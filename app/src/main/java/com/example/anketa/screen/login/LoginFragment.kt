@@ -11,11 +11,18 @@ import androidx.navigation.fragment.findNavController
 import com.example.anketa.data.Role
 import com.example.anketa.databinding.FragmentLoginBinding
 import com.example.anketa.prefs
+import com.example.anketa.screen.profile.NavBarCallbacks
 
 class LoginFragment : Fragment() {
 
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
+    private var callbacks: NavBarCallbacks? = null
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        callbacks = context as NavBarCallbacks
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +38,7 @@ class LoginFragment : Fragment() {
 
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.apply {
+            callbacks?.hideNavBar()
 
             val actionToEmployer = LoginFragmentDirections.actionLoginToEditProfileEmployer(true)
             with(binding) {
@@ -46,6 +54,11 @@ class LoginFragment : Fragment() {
                 }
             }
         }.root
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        callbacks = null
     }
 
     override fun onDestroyView() {

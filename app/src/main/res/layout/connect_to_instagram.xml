@@ -1,7 +1,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
@@ -9,7 +9,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/edit_card"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_44sdp"
             android:layout_marginStart="@dimen/_16sdp"
             android:layout_marginEnd="@dimen/_16sdp"
             app:cardCornerRadius="@dimen/edit_txt_border_radius"
@@ -23,7 +23,7 @@
             <com.google.android.material.button.MaterialButton
                 style="@style/CustomButton"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:text="@string/btn_connect_instagram"
                 android:textColor="@color/green_main"

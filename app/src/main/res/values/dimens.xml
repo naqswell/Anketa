@@ -18,5 +18,6 @@
     <dimen name="btn_corner_radius">@dimen/_32sdp</dimen>
     <dimen name="btn_height">@dimen/_44sdp</dimen>
 
-    <dimen name="btn_and_24sdp">@dimen/_68sdp</dimen>
+    <dimen name="one_button">@dimen/_76sdp</dimen>
+    <dimen name="two_buttons">@dimen/_136sdp</dimen>
 </resources>

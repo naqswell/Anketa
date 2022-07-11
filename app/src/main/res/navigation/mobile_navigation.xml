@@ -26,7 +26,7 @@
 
     <fragment
         android:id="@+id/navigation_profile_employer"
-        android:name="com.example.anketa.screen.profile.ProfileEmployerFragment"
+        android:name="com.example.anketa.screen.profile.employer.ProfileEmployerFragment"
         tools:layout="@layout/fragment_profile_employer">
         <action
             android:id="@+id/action_profile_employer_to_edit_profile_employer"
@@ -65,7 +65,7 @@
 
     <fragment
         android:id="@+id/navigation_edit_profile_employer"
-        android:name="com.example.anketa.screen.profile.EditProfileEmployerFragment"
+        android:name="com.example.anketa.screen.profile.employer.EditProfileEmployerFragment"
         tools:layout="@layout/fragment_edit_profile_employer">
         <argument
             android:name="isLogin"
@@ -79,17 +79,29 @@
             app:popUpTo="@+id/navigation_main"
             app:popUpToInclusive="true">
         </action>
+        <action
+            android:id="@+id/action_to_login"
+            app:destination="@id/navigation_login"
+            app:popUpTo="@+id/navigation_login"
+            app:popUpToInclusive="true">
+        </action>
     </fragment>
 
     <fragment
         android:id="@+id/navigation_edit_profile_employee"
-        android:name="com.example.anketa.screen.profile.EditProfileEmployeeFragment"
+        android:name="com.example.anketa.screen.profile.employee.EditProfileEmployeeFragment"
         tools:layout="@layout/fragment_edit_profile_employee"
         >
         <action
             android:id="@+id/action_to_home"
             app:destination="@id/navigation_main"
             app:popUpTo="@+id/navigation_main"
+            app:popUpToInclusive="true">
+        </action>
+        <action
+            android:id="@+id/action_to_login"
+            app:destination="@id/navigation_login"
+            app:popUpTo="@+id/navigation_login"
             app:popUpToInclusive="true">
         </action>
         <argument

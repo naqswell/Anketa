@@ -233,9 +233,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/card_profile_employer"
             tools:itemCount="3"
-            tools:listitem="@layout/vacancy_card">
+            tools:listitem="@layout/vacancy_card" />
 
-        </androidx.recyclerview.widget.RecyclerView>
 
     </androidx.constraintlayout.motion.widget.MotionLayout>
 

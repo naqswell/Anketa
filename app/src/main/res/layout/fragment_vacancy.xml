@@ -18,7 +18,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_decline"
             style="@style/TitleButton"
-            android:text="@string/decline"
+            android:text="@string/btn_decline"
             android:textColor="@color/green_main"
             app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_1"
             app:layout_constraintEnd_toEndOf="parent"
@@ -43,30 +43,27 @@
         <ScrollView
             android:id="@+id/scrollView2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="?actionBarSize"
-            android:paddingTop="@dimen/_8sdp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_1"
-            android:layout_marginBottom="@dimen/btn_and_24sdp"
+            android:paddingBottom="@dimen/one_button"
+            android:clipToPadding="false"
             >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/guideline_horizontal_1"
-                app:layout_constraintVertical_bias="0">
+                >
 
                 <include
                     android:id="@+id/vacancy_position"
                     layout="@layout/edit_text_with_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_24sdp" />
+                    />
 
                 <include
                     android:id="@+id/vacancy_salary"
@@ -109,7 +106,10 @@
             android:backgroundTint="@color/green_main"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            />\
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

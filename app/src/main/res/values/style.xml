@@ -38,6 +38,7 @@
         <item name="cornerRadius">@dimen/btn_corner_radius</item>
         <item name="android:layout_marginStart">@dimen/_16sdp</item>
         <item name="android:layout_marginEnd">@dimen/_16sdp</item>
+        <item name="android:elevation">15dp</item>
     </style>
 
     <style name="CustomStandartText">

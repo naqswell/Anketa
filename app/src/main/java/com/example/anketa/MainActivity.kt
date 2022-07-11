@@ -5,12 +5,9 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.anketa.data.Role
 import com.example.anketa.databinding.ActivityMainBinding
-import com.example.anketa.screen.main.MainFragmentDirections
-import com.example.anketa.screen.profile.EditProfileEmployeeFragmentDirections
 import com.example.anketa.screen.profile.NavBarCallbacks
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -33,7 +30,7 @@ class MainActivity : AppCompatActivity(), NavBarCallbacks{
 
 
     private fun checkLoginStatus() {
-        if (prefs.role == Role.Empty) {
+        if (!prefs.isProfileDataSet) {
             binding.navView.visibility = View.GONE
             findNavController(R.id.nav_host_fragment_activity_main).navigate(R.id.navigation_login)
         }
