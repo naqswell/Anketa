@@ -7,34 +7,66 @@
     <string name="title_profile">Профиль</string>
 
     <string name="btn_continue">Продолжить</string>
+    <string name="btn_save">Сохранить</string>
+    <string name="btn_share_position">Опубликовать</string>
+    <string name="btn_edit">Редактировать</string>
+    <string name="btn_connect_instagram">Подключить инстаграм</string>
+
+    <string name="reviews">Отзывы:</string>
+    <string name="friends">Друзья:</string>
+
+    <string name="salary_card">Зарплата:</string>
+    <string name="experience_card">Требуемый опыт:</string>
 
     <string name="description_choose_role_detail">Если вы ищете сотрудников для заведения, выберите “Работодатель”. Если вы ищете работу, выберите “Сотрудник”</string>
     <string name="description_choose_role">Выберите роль</string>
     <string name="employer">Работодатель</string>
     <string name="employee">Сотрудник</string>
-    <string name="back">Назад</string>
-    <string name="fill_profile">Заполните профиль</string>
+    <string name="btn_back">Назад</string>
+    <string name="btn_decline">Отмена</string>
+    <string name="btn_logout">Выйти из профиля</string>
+    <string name="title_fill_profile">Заполните профиль</string>
+    <string name="title_your_profile">Ваш профиль</string>
+    <string name="title_edit_profile">Редактирование профиля</string>
+    <string name="title_position">Вакансия</string>
     <string name="business_name">Название заведения</string>
     <string name="city_name">Название города</string>
     <string name="city">Город</string>
     <string name="address">Адрес</string>
     <string name="edit_txt_hint">Нажмите чтобы ввести данные</string>
-    <string name="example_address">Загородный проспект, 60</string>
-    <string name="example_restaurant_name">Cristal</string>
+
+    <string name="vacancy_edit_txt_title">Название вакансии</string>
+    <string name="salary_edit_txt_title">Зарплата</string>
+    <string name="experience_edit_txt_title">Требуемый опыт</string>
+    <string name="detail_edit_txt_title">Описание вакансии</string>
+
+    <string name="mock_address">Загородный проспект, 60</string>
+    <string name="mock_restaurant_name">Cristal</string>
     <string name="example_city_name">Санкт-Петербург</string>
 
 
+    <string name="mock_name">Оксана</string>
+    <string name="mock_second_name">Васильева</string>
+    <string name="mock_position">Официант</string>
+    <string name="mock_salary">70 000 – 90 000 руб.</string>
+    <string name="mock_work_experience">более 5-ти лет</string>
+    <string name="mock_about_me">Увлечена любимым делом, обожаю встречать гостей и длать все, чтобы людям в заведении было комфортно и удобно</string>
+
+    <string name="mock_vacancy_position_1">Официант</string>
+    <string name="mock_vacancy_salary_1">50 000 – 60 000 руб.</string>
+    <string name="mock_vacancy_work_experience_1">2 года</string>
+    <string name="mock_vacancy_detail_1">Нам нужен человек с высоким чувством эмпатии, любящий людей и умеющий …</string>
+
+    <string name="mock_vacancy_position_2">Бармен</string>
+    <string name="mock_vacancy_salary_2">60 000 – 70 000 руб.</string>
+    <string name="mock_vacancy_work_experience_2">4 года</string>
+    <string name="mock_vacancy_detail_2">В поисках ловкого и энергичного профессионала с умением вежливо общаться …</string>
+
     <string name="name">Имя</string>
-    <string name="example_name">Валерий</string>
     <string name="second_name">Фамилия</string>
-    <string name="example_second_name">Владимирович</string>
     <string name="position">Должность</string>
-    <string name="example_position">Бармен</string>
     <string name="salary">Зарплатные ожидания</string>
-    <string name="example_salary">60 000 руб.</string>
     <string name="work_experience">Опыт работы</string>
-    <string name="example_work_experience">7 лет</string>
     <string name="about_me">О себе</string>
-    <string name="example_about_me">Победитель ежегодного Московского чемпионата барменов в 2021 и 2020 годах</string>
 
 </resources>
