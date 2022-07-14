@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_8sdp"
                 android:background="@null"
-                android:text="Поиск"
+                android:hint="Поиск"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
@@ -103,40 +103,22 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardThree"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginStart="@dimen/_24sdp"
-        android:layout_marginTop="@dimen/_24sdp"
-        android:layout_marginEnd="@dimen/_24sdp"
-        android:layout_marginBottom="0dp"
-        app:cardCornerRadius="@dimen/card_corner_radius"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.7"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_home">
+        android:layout_width="@dimen/card_width"
+        android:layout_height="@dimen/card_height"
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/containerCardThree"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_height="match_parent">
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardTwo"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginStart="@dimen/_24sdp"
-        android:layout_marginTop="@dimen/_24sdp"
-        android:layout_marginEnd="@dimen/_24sdp"
-        android:layout_marginBottom="0dp"
-        app:cardCornerRadius="@dimen/card_corner_radius"
-        app:cardElevation="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.7"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_home">
+        android:layout_width="@dimen/card_width"
+        android:layout_height="@dimen/card_height"
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/containerCardTwo"
@@ -218,7 +200,8 @@
                 app:cardCornerRadius="@dimen/_200sdp"
                 app:layout_constraintBottom_toBottomOf="@+id/btn_edit2"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/btn_edit2"></androidx.cardview.widget.CardView>
+                app:layout_constraintStart_toEndOf="@+id/btn_edit2">
+            </androidx.cardview.widget.CardView>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLike2"
@@ -427,14 +410,8 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardOne"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:cardCornerRadius="@dimen/card_corner_radius"
-        app:cardElevation="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guideline_horizontal_home">
+        android:layout_width="@dimen/card_width"
+        android:layout_height="@dimen/card_height">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/containerCardOne"

@@ -48,7 +48,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:paddingBottom="@dimen/one_button"
+            android:paddingBottom="@dimen/_180sdp"
             android:clipToPadding="false"
             >
 
@@ -83,7 +83,7 @@
                     android:id="@+id/vacancy_about"
                     layout="@layout/edit_text_with_title_big"
                     android:layout_width="match_parent"
-                    android:layout_height="400dp"
+                    android:layout_height="300dp"
                     android:layout_marginTop="@dimen/_8sdp"
                     />
 
@@ -107,9 +107,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            />\
-
-
-
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

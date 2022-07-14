@@ -5,40 +5,68 @@
     <ConstraintSet android:id="@+id/startMain">
         <Constraint android:id="@id/cardOne">
             <Layout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_width="@dimen/card_width"
+                android:layout_height="@dimen/card_height"
                 android:layout_marginStart="@dimen/_16sdp"
                 android:layout_marginTop="@dimen/_16sdp"
                 android:layout_marginEnd="@dimen/_16sdp"
                 android:layout_marginBottom="@dimen/_8sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHeight_percent="0.7"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_home"
                 />
             <CustomAttribute
-                app:attributeName="cardElevation"
+                app:attributeName="radius"
+                app:customDimension="@dimen/card_corner_radius" />
+            <CustomAttribute
+                app:attributeName="elevation"
                 app:customFloatValue="15" />
         </Constraint>
 
         <Constraint android:id="@id/cardTwo">
             <Layout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginStart="@dimen/_24sdp"
-                android:layout_marginTop="@dimen/_24sdp"
-                android:layout_marginEnd="@dimen/_24sdp"
-                android:layout_marginBottom="0dp"
+                android:layout_width="@dimen/card_width"
+                android:layout_height="@dimen/card_height"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHeight_percent="0.7"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_home"/>
+            <CustomAttribute
+                app:attributeName="radius"
+                app:customDimension="@dimen/card_corner_radius" />
+            <CustomAttribute
+                app:attributeName="elevation"
+                app:customFloatValue="10" />
+        </Constraint>
+
+        <Constraint android:id="@id/cardThree">
+            <Layout
+                android:layout_width="@dimen/card_width"
+                android:layout_height="@dimen/card_height"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_48sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_home"
                 />
             <CustomAttribute
-                app:attributeName="cardElevation"
-                app:customFloatValue="10" />
+                app:attributeName="radius"
+                app:customDimension="@dimen/card_corner_radius" />
+            <CustomAttribute
+                app:attributeName="elevation"
+                app:customFloatValue="5" />
+            <PropertySet
+                android:alpha="0"
+                android:visibility="gone"
+                />
         </Constraint>
     </ConstraintSet>
 
@@ -58,32 +86,55 @@
                 app:keyPositionType="pathRelative"
                 app:motionTarget="@id/cardOne"
                 app:percentY="0.1" />
+<!--            <KeyAttribute-->
+<!--                android:alpha="1"-->
+<!--                app:framePosition="25"-->
+<!--                app:motionTarget="@id/cardThree" />-->
         </KeyFrameSet>
     </Transition>
 
     <ConstraintSet android:id="@+id/offScreenUnlike">
         <Constraint android:id="@id/cardOne">
             <Layout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/card_width"
+                android:layout_height="@dimen/card_height"
                 app:layout_constraintEnd_toStartOf="parent" />
         </Constraint>
         <Constraint android:id="@id/cardTwo">
             <Layout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_width="@dimen/card_width"
+                android:layout_height="@dimen/card_height"
                 android:layout_marginStart="@dimen/_16sdp"
                 android:layout_marginTop="@dimen/_16sdp"
                 android:layout_marginEnd="@dimen/_16sdp"
                 android:layout_marginBottom="@dimen/_8sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHeight_percent="0.7"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_home" />
             <CustomAttribute
-                app:attributeName="cardElevation"
+                app:attributeName="elevation"
                 app:customFloatValue="15" />
+        </Constraint>
+        <Constraint android:id="@id/cardThree">
+            <Layout
+                android:layout_width="@dimen/card_width"
+                android:layout_height="@dimen/card_height"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_home"
+                />
+            <CustomAttribute
+                app:attributeName="elevation"
+                app:customFloatValue="10" />
+            <PropertySet
+                android:alpha="1"
+                android:visibility="visible"/>
         </Constraint>
     </ConstraintSet>
 
@@ -102,7 +153,11 @@
                 app:framePosition="25"
                 app:keyPositionType="pathRelative"
                 app:motionTarget="@id/cardOne"
-                app:percentY="0.1" />
+                app:percentY="-0.1" />
+<!--            <KeyAttribute-->
+<!--                android:alpha="1"-->
+<!--                app:framePosition="25"-->
+<!--                app:motionTarget="@id/cardThree" />-->
         </KeyFrameSet>
     </Transition>
 
@@ -111,27 +166,47 @@
         app:deriveConstraintsFrom="@id/startMain">
         <Constraint android:id="@id/cardOne">
             <Layout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/card_width"
+                android:layout_height="@dimen/card_height"
                 app:layout_constraintStart_toEndOf="parent"
                 />
         </Constraint>
         <Constraint android:id="@id/cardTwo">
             <Layout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_width="@dimen/card_width"
+                android:layout_height="@dimen/card_height"
                 android:layout_marginStart="@dimen/_16sdp"
                 android:layout_marginTop="@dimen/_16sdp"
                 android:layout_marginEnd="@dimen/_16sdp"
                 android:layout_marginBottom="@dimen/_8sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHeight_percent="0.7"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_home" />
             <CustomAttribute
-                app:attributeName="cardElevation"
+                app:attributeName="elevation"
                 app:customFloatValue="15" />
+        </Constraint>
+
+        <Constraint android:id="@id/cardThree">
+            <Layout
+                android:layout_width="@dimen/card_width"
+                android:layout_height="@dimen/card_height"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_32sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_home"
+                />
+            <CustomAttribute
+                app:attributeName="elevation"
+                app:customFloatValue="10" />
+            <PropertySet
+                android:alpha="1"
+                android:visibility="visible"/>
         </Constraint>
     </ConstraintSet>
 

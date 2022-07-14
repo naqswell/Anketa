@@ -12,8 +12,8 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_profile_employer"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_width="@dimen/card_width"
+            android:layout_height="@dimen/card_height_smaller"
             app:layout_constraintHeight_percent="0.55"
             android:layout_marginStart="@dimen/_16sdp"
             android:layout_marginTop="@dimen/_16sdp"
