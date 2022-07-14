@@ -19,7 +19,7 @@
                 />
             <CustomAttribute
                 app:attributeName="cardElevation"
-                app:customFloatValue="15F" />
+                app:customFloatValue="15" />
         </Constraint>
 
         <Constraint android:id="@id/cardTwo">
@@ -40,13 +40,6 @@
                 app:attributeName="cardElevation"
                 app:customFloatValue="10" />
         </Constraint>
-        <Constraint
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_width="wrap_content"
-            app:layout_constraintEnd_toStartOf="@+id/btn_list"
-            android:id="@+id/search_panel"
-            app:layout_constraintStart_toStartOf="@+id/backButton" />
     </ConstraintSet>
 
     <Transition
