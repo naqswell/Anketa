@@ -10,10 +10,15 @@
     <string name="btn_save">Сохранить</string>
     <string name="btn_share_position">Опубликовать</string>
     <string name="btn_edit">Редактировать</string>
+    <string name="btn_detail">Подробнее</string>
     <string name="btn_connect_instagram">Подключить инстаграм</string>
 
-    <string name="reviews">Отзывы:</string>
-    <string name="friends">Друзья:</string>
+    <string name="title_reviews">Отзывы:</string>
+    <string name="title_friends">Друзья:</string>
+    <string name="title_city">Город:</string>
+    <string name="title_salary">ЗП ожидания:</string>
+    <string name="title_experience">Опыт работы:</string>
+    <string name="title_employer_reviews">Отзывы работодателей:</string>
 
     <string name="salary_card">Зарплата:</string>
     <string name="experience_card">Требуемый опыт:</string>

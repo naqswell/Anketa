@@ -7,24 +7,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="?actionBarSize"
-        app:layoutDescription="@xml/fragment_profile_employer_scene">
+        app:layoutDescription="@xml/fragment_profile_employer_scene"
+        >
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_profile_employer"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.55"
             android:layout_marginStart="@dimen/_16sdp"
             android:layout_marginTop="@dimen/_16sdp"
             android:layout_marginEnd="@dimen/_16sdp"
-            android:layout_marginBottom="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
             app:cardCornerRadius="@dimen/card_corner_radius"
             app:cardElevation="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="H, 0.8:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0">
+            app:layout_constraintVertical_bias="0"
+            >
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -73,31 +75,31 @@
                     app:tabMaxWidth="@dimen/_10sdp" />
 
                 <ImageView
-                    android:id="@+id/img_rating_profile_employer"
+                    android:id="@+id/img_rating_profile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_16sdp"
-                    android:src="@drawable/rating_circle"
+                    app:layout_constraintTop_toBottomOf="@+id/viewpager_profile_employer"
                     app:layout_constraintBottom_toBottomOf="@+id/viewpager_profile_employer"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/viewpager_profile_employer"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:src="@drawable/rating_circle"
                     tools:ignore="ContentDescription" />
 
                 <TextView
-                    android:id="@+id/txt_rating_profile_employer"
+                    android:id="@+id/txt_rating_profile"
                     style="@style/CustomTitleText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="4.8"
-                    app:layout_constraintBottom_toBottomOf="@+id/img_rating_profile_employer"
-                    app:layout_constraintEnd_toEndOf="@+id/img_rating_profile_employer"
-                    app:layout_constraintStart_toStartOf="@+id/img_rating_profile_employer"
-                    app:layout_constraintTop_toTopOf="@+id/img_rating_profile_employer" />
+                    app:layout_constraintBottom_toBottomOf="@+id/img_rating_profile"
+                    app:layout_constraintEnd_toEndOf="@+id/img_rating_profile"
+                    app:layout_constraintStart_toStartOf="@+id/img_rating_profile"
+                    app:layout_constraintTop_toTopOf="@+id/img_rating_profile" />
 
                 <TextView
-                    android:id="@+id/txt_rating_profile_name"
+                    android:id="@+id/title_position"
                     style="@style/CustomTitleText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -112,7 +114,7 @@
                     app:layout_constraintVertical_bias="0" />
 
                 <TextView
-                    android:id="@+id/txt_rating_profile_address"
+                    android:id="@+id/title_name"
                     style="@style/CustomStandartText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -121,25 +123,25 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0"
-                    app:layout_constraintStart_toStartOf="@+id/txt_rating_profile_name"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_rating_profile_name"
+                    app:layout_constraintStart_toStartOf="@+id/title_position"
+                    app:layout_constraintTop_toBottomOf="@+id/title_position"
                     app:layout_constraintVertical_bias="0" />
 
                 <TextView
-                    android:id="@+id/txt_rating_profile_reviews_title"
+                    android:id="@+id/title_city"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_16sdp"
                     android:fontFamily="@font/inter_medium"
-                    android:text="@string/reviews"
+                    android:text="@string/title_reviews"
                     android:textSize="@dimen/text_big"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0"
-                    app:layout_constraintStart_toStartOf="@+id/txt_rating_profile_name"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_rating_profile_address" />
+                    app:layout_constraintStart_toStartOf="@+id/title_position"
+                    app:layout_constraintTop_toBottomOf="@+id/title_name" />
 
                 <TextView
-                    android:id="@+id/txt_rating_profile_reviews_counter"
+                    android:id="@+id/data_city"
                     style="@style/CustomTitleText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -149,27 +151,27 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0"
-                    app:layout_constraintStart_toEndOf="@+id/txt_rating_profile_reviews_title"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_rating_profile_address"
+                    app:layout_constraintStart_toEndOf="@+id/title_city"
+                    app:layout_constraintTop_toBottomOf="@+id/title_name"
                     app:layout_constraintVertical_bias="0" />
 
                 <TextView
-                    android:id="@+id/txt_profile_friends_title"
+                    android:id="@+id/title_salary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_16sdp"
                     android:fontFamily="@font/inter_medium"
-                    android:text="@string/friends"
+                    android:text="@string/title_friends"
                     android:textSize="@dimen/text_big"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0"
-                    app:layout_constraintStart_toStartOf="@+id/txt_rating_profile_name"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_rating_profile_reviews_title"
+                    app:layout_constraintStart_toStartOf="@+id/title_position"
+                    app:layout_constraintTop_toBottomOf="@+id/title_city"
                     app:layout_constraintVertical_bias="0" />
 
                 <TextView
-                    android:id="@+id/txt_profile_friends_counter"
+                    android:id="@+id/data_salary"
                     style="@style/CustomTitleText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -179,8 +181,8 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0"
-                    app:layout_constraintStart_toEndOf="@+id/txt_profile_friends_title"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_rating_profile_reviews_title"
+                    app:layout_constraintStart_toEndOf="@+id/title_salary"
+                    app:layout_constraintTop_toBottomOf="@+id/title_city"
                     app:layout_constraintVertical_bias="0" />
 
                 <ImageView
@@ -190,18 +192,18 @@
                     android:layout_marginStart="@dimen/_8sdp"
                     android:layout_marginTop="@dimen/_16sdp"
                     android:src="@drawable/mock_rating"
-                    app:layout_constraintBottom_toTopOf="@+id/txt_profile_friends_counter"
+                    app:layout_constraintBottom_toTopOf="@+id/data_salary"
                     app:layout_constraintDimensionRatio="1:0.5"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.6"
-                    app:layout_constraintStart_toEndOf="@+id/txt_profile_friends_counter"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_rating_profile_reviews_counter"
+                    app:layout_constraintStart_toEndOf="@+id/data_salary"
+                    app:layout_constraintTop_toBottomOf="@+id/data_city"
                     app:layout_constraintVertical_bias="0.35"
                     app:layout_constraintWidth_percent="0.35"
                     tools:ignore="ContentDescription" />
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_profile_employer_edit"
+                    android:id="@+id/btn_edit"
                     style="@style/CustomButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -222,7 +224,7 @@
                     />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_profile_employer"

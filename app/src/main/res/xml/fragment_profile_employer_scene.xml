@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:motion="http://schemas.android.com/tools">
 
-    <ConstraintSet android:id="@+id/start">
+    <ConstraintSet android:id="@+id/startMain">
 <!--        <Constraint android:id="@+id/card_profile_employer_1" />-->
 <!--        <Constraint android:id="@+id/recycler_profile_employer" />-->
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end"
-        app:deriveConstraintsFrom="@id/start"
+        app:deriveConstraintsFrom="@id/startMain"
         >
         <Constraint
             android:id="@id/card_profile_employer"
@@ -30,7 +30,7 @@
 
     <Transition
         app:constraintSetEnd="@+id/end"
-        app:constraintSetStart="@id/start"
+        app:constraintSetStart="@id/startMain"
         app:duration="1000"
         >
         <OnSwipe

@@ -4,6 +4,7 @@ plugins {
     id 'androidx.navigation.safeargs.kotlin'
     id 'kotlin-parcelize'
 }
+apply plugin: 'kotlin-android'
 
 android {
     compileSdk 32
@@ -56,4 +57,6 @@ dependencies {
 
     implementation "com.intuit.sdp:sdp-android:$ssp_sdp_version"
     implementation "com.intuit.ssp:ssp-android:$ssp_sdp_version"
+    implementation "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

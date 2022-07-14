@@ -66,7 +66,7 @@ class ProfileEmployerFragment : Fragment() {
     }
 
     private fun bindEditProfileClick() {
-        binding.btnProfileEmployerEdit.setOnClickListener {
+        binding.btnEdit.setOnClickListener {
             callbacks?.hideNavBar()
             findNavController().navigate(
                 ProfileEmployerFragmentDirections.actionProfileEmployerToEditProfileEmployer(false)

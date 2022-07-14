@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/edit_txt_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,7 +33,11 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:cardElevation="0dp"
+            app:strokeWidth="@dimen/_1sdp"
+            app:strokeColor="@color/gray"
+            >
 
             <EditText
                 android:id="@+id/edit_txt"
@@ -49,7 +53,7 @@
                 android:inputType="textNoSuggestions|textMultiLine"
                 android:text="@{edtTxt}"
                 android:importantForAutofill="no" />
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
         <Space
             android:id="@+id/edit_txt_space"
