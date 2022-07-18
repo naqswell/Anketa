@@ -1,26 +1,63 @@
 package com.example.anketa.viewmodel
 
-import android.graphics.Color
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.anketa.R
 import com.example.anketa.model.EmployeeModel
 import com.example.anketa.model.EmployeeTwoCardModel
 
-class EmployeeViewModel: ViewModel() {
+class EmployeeViewModel : ViewModel() {
 
-    private val data = listOf(
-        EmployeeModel(
-            name = "Leha", age = 23, description = "Project Manager", Color.parseColor("#c50e29")
-        ),
-        EmployeeModel(
-            name = "Nikita Frolov", age = 22, description = "IOS Developer", Color.parseColor("#c60055")
-        ),
-        EmployeeModel(
-            name = "Yulya", age = 22, description = "UX/UI Designer", Color.parseColor("#aa00c7")
-        ),
-        EmployeeModel(
-            name = "Nikita Ivanov", age = 21, description = "Android Developer", Color.parseColor("#3f1dcb")
+    val images1 = arrayOf(
+        R.drawable.person_one_1,
+        R.drawable.person_one_2,
+        R.drawable.person_one_3,
+    )
+
+    val images2 = arrayOf(
+        R.drawable.person_two_1,
+        R.drawable.person_two_3,
+        R.drawable.person_two_2,
         )
+
+    val images3 = arrayOf(
+        R.drawable.person_three_1,
+        R.drawable.person_three_2,
+        R.drawable.person_three_3,
+    )
+
+
+    val employees = listOf(
+        EmployeeModel(
+            position = "Официант",
+            name = "Оксана Васильева",
+            city = "Санкт-Петербург",
+            salary = "70 000 - 90 000 руб",
+            experience = "более 5-ти лет",
+            reviews = 12,
+            rating = 4.9F,
+            images1,
+        ),
+        EmployeeModel(
+            position = "Повар",
+            name = "Виктор Кузнецов",
+            city = "Санкт-Петербург",
+            salary = "120 000 - 150 000 руб",
+            experience = "более 5-ти лет",
+            reviews = 21,
+            rating = 4.1F,
+            images2,
+        ),
+        EmployeeModel(
+            position = "Администратор",
+            name = "Марина Смирнова",
+            city = "Санкт-Петербург",
+            salary = "70 000 - 100 000 руб",
+            experience = "4 года",
+            reviews = 12,
+            rating = 5.0F,
+            images3,
+        ),
     )
 
     var stream = MutableLiveData<EmployeeTwoCardModel>().apply { EmployeeTwoCardModel(topCard, bottomCard) }
@@ -28,11 +65,11 @@ class EmployeeViewModel: ViewModel() {
 
     private var currentIndex = 0
 
-    private val topCard
-        get() = data[currentIndex % data.size]
+    val topCard
+        get() = employees[currentIndex % employees.size]
 
-    private val bottomCard
-        get() = data[(currentIndex + 1) % data.size]
+    val bottomCard
+        get() = employees[(currentIndex + 1) % employees.size]
 
     private fun updateCards() {
         stream.value = EmployeeTwoCardModel(

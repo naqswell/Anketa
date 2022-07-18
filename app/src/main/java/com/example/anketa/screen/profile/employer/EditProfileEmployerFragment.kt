@@ -47,7 +47,7 @@ class EditProfileEmployerFragment : Fragment() {
 
         return binding.apply {
             callbacks?.hideNavBar()
-            initUI(this)
+            initUI(this, args.isLogin)
         }.root
     }
 
@@ -61,10 +61,10 @@ class EditProfileEmployerFragment : Fragment() {
         callbacks = null
     }
 
-    private fun initUI(binding: FragmentEditProfileEmployerBinding) {
+    private fun initUI(binding: FragmentEditProfileEmployerBinding, isLogin: Boolean) {
         with(binding) {
 //            scrollView.post { scrollView.smoothScrollTo(0, scrollView.getChildAt(0).height) }
-            if (args.isLogin) {
+            if (isLogin) {
                 View.GONE.let {
                     headerStart.visibility = it
                     btnDecline.visibility = it

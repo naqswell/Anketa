@@ -6,14 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.constraintlayout.motion.widget.TransitionAdapter
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.anketa.R
 import com.example.anketa.databinding.FragmentMainBinding
+import com.example.anketa.model.EmployeeModel
 import com.example.anketa.model.EmployeeTwoCardModel
 import com.example.anketa.screen.ViewPager2Adapter
 import com.example.anketa.viewmodel.EmployeeViewModel
 import com.google.android.material.tabs.TabLayoutMediator
+import kotlinx.coroutines.*
 
 class MainFragment : Fragment() {
 
@@ -21,32 +24,11 @@ class MainFragment : Fragment() {
     private val binding get() = _binding!!
     val viewModel: EmployeeViewModel by activityViewModels()
     private lateinit var adapterCardOne: ViewPager2Adapter
-    private lateinit var adapterCardTwo: ViewPager2Adapter
+//    private lateinit var adapterCardTwo: ViewPager2Adapter
 
-    val images1 = arrayOf(
-        R.drawable.person_one_1,
-        R.drawable.person_one_2,
-        R.drawable.person_one_3
-    )
-
-    val images2 = arrayOf(
-        R.drawable.restaurant_one_1,
-        R.drawable.restaurant_one_2,
-        R.drawable.restaurant_one_3,
-        R.drawable.restaurant_one_4,
-    )
-
-    val images3 = arrayOf(
-        R.drawable.person_three_1,
-        R.drawable.person_three_2,
-        R.drawable.person_three_3,
-    )
-
-    val arrayOfImgArray = arrayOf(images1, images2, images3)
+    private val coroutineScope = CoroutineScope(SupervisorJob() + Dispatchers.Main.immediate)
 
     private var initFlag = false
-
-    private var counter = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -65,7 +47,7 @@ class MainFragment : Fragment() {
         viewModel
             .stream
             .observe(viewLifecycleOwner) {
-                bindCard(it)
+                bindCards(it)
                 initFlag = !initFlag
             }
     }
@@ -80,24 +62,27 @@ class MainFragment : Fragment() {
             motionLayout.setTransitionListener(object : TransitionAdapter() {
                 override fun onTransitionCompleted(motionLayout: MotionLayout, currentId: Int) {
                     when (currentId) {
-                        R.id.offScreenUnlike, R.id.offScreenLike -> {
+                        R.id.offScreenUnlike -> {
                             motionLayout.progress = 0f
-                            motionLayout.setTransition(R.id.startMain, R.id.startMain)
+                            motionLayout.setTransition(R.id.startMain, R.id.offScreenUnlike)
+                            viewModel.swipe()
+                        }
+                        R.id.offScreenLike -> {
+                            motionLayout.progress = 0f
+                            motionLayout.setTransition(R.id.startMain, R.id.offScreenUnlike)
                             viewModel.swipe()
                         }
                     }
                 }
             })
 
-            adapterCardOne = ViewPager2Adapter(images1)
+            adapterCardOne = ViewPager2Adapter(viewModel.topCard.arrayOfImg)
             viewpager.adapter = adapterCardOne
-
             TabLayoutMediator(tablayout, viewpager) { tab, position ->
                 tab.view.isClickable = false;
             }.attach()
-
-            adapterCardTwo = ViewPager2Adapter(images2)
-            viewpager2.adapter = adapterCardTwo
+            bindTopCard(viewModel.topCard)
+            bindBottomCard(viewModel.bottomCard)
 
             btnLike.setOnClickListener {
                 motionLayout.transitionToState(R.id.offScreenLike)
@@ -106,25 +91,48 @@ class MainFragment : Fragment() {
             btnDislike.setOnClickListener {
                 motionLayout.transitionToState(R.id.offScreenUnlike)
             }
-
-            viewModel.swipe()
         }
     }
 
-    private fun bindCard(model: EmployeeTwoCardModel) {
+    private fun updateAdapterBeforeSwipe(model: EmployeeTwoCardModel) {
         with(binding) {
-//            containerCardTwo.setBackgroundColor(model.cardBottom.backgroundColor)
-//            containerCardOne.setBackgroundColor(model.cardTop.backgroundColor)
             viewpager.setCurrentItem(0, false)
-//            if (initFlag) {
-//                viewPagerAdapter.updateImages(images2)
-//            } else {
-            val idx = counter % (arrayOfImgArray.size)
-            val idx2 = (counter + 1) % (arrayOfImgArray.size)
-            adapterCardOne.updateImages(arrayOfImgArray[idx])
-            adapterCardTwo.updateImages(arrayOfImgArray[idx2])
-            counter += 1
-//            }
+            adapterCardOne.updateImages(model.cardTop.arrayOfImg)
+            bindTopCard(model.cardTop)
+        }
+    }
+
+    private fun bindTopCard(cardTop: EmployeeModel) {
+        with(binding) {
+            titlePosition.text = cardTop.position
+            titleName.text = cardTop.name
+            dataCity.text = cardTop.city
+            dataSalary.text = cardTop.salary
+            dataExperience.text = cardTop.experience
+            dataReviews.text = cardTop.reviews.toString()
+            txtRatingProfile.text = cardTop.rating.toString()
+        }
+
+    }
+
+    private fun bindBottomCard(cardBottom: EmployeeModel) {
+        with(binding) {
+            imageCardTwo.setImageDrawable(ResourcesCompat.getDrawable(resources, cardBottom.arrayOfImg[0], null))
+            titlePosition2.text = cardBottom.position
+            titleName2.text = cardBottom.name
+            dataCity2.text = cardBottom.city
+            dataSalary2.text = cardBottom.salary
+            dataExperience2.text = cardBottom.experience
+            dataReviews2.text = cardBottom.reviews.toString()
+            txtRatingProfile2.text = cardBottom.rating.toString()
+        }
+    }
+
+    private fun bindCards(model: EmployeeTwoCardModel) {
+        coroutineScope.launch {
+            updateAdapterBeforeSwipe(model)
+            delay(10)
+            bindBottomCard(model.cardBottom)
         }
     }
 }

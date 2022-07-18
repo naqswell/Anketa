@@ -29,7 +29,7 @@ class VacancyFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requireActivity().onBackPressedDispatcher.addCallback(this) {
-            findNavController().navigateUp()
+            findNavController().navigate(VacancyFragmentDirections.actionToProfile(1F))
             callbacks?.showNavBar()
         }
     }

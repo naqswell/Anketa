@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.anketa.R
 import com.example.anketa.data.profile.Vacancy
@@ -23,7 +24,8 @@ class ProfileEmployerFragment : Fragment() {
 
     private lateinit var vacancyAdapter: VacancyAdapter
     private lateinit var imageAdapter: ViewPager2Adapter
-    private var callbacks: NavBarCallbacks? = null
+    private var navBarCallbacks: NavBarCallbacks? = null
+    private val args: ProfileEmployerFragmentArgs by navArgs()
 
     val images1 = arrayOf(
         R.drawable.restaurant_one_1,
@@ -34,7 +36,7 @@ class ProfileEmployerFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        callbacks = context as NavBarCallbacks
+        navBarCallbacks = context as NavBarCallbacks
     }
 
     override fun onCreateView(
@@ -45,20 +47,16 @@ class ProfileEmployerFragment : Fragment() {
         _binding = FragmentProfileEmployerBinding.inflate(inflater, container, false)
 
         return binding.apply {
-            initAdapters()
+            initAdapters(this)
             bindEditProfileClick()
         }.root
     }
 
-//    override fun onResume() {
-//        super.onResume()
+    override fun onResume() {
+        super.onResume()
 //        binding.recyclerProfileEmployer.adapter?.notifyDataSetChanged()
-//    }
-//
-//    override fun onPause() {
-//        super.onPause()
-//        binding.recyclerProfileEmployer.adapter?.notifyDataSetChanged()
-//    }
+        setMotionProgress(binding, args.motionProgress)
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()
@@ -67,26 +65,35 @@ class ProfileEmployerFragment : Fragment() {
 
     private fun bindEditProfileClick() {
         binding.btnEdit.setOnClickListener {
-            callbacks?.hideNavBar()
+            navBarCallbacks?.hideNavBar()
             findNavController().navigate(
                 ProfileEmployerFragmentDirections.actionProfileEmployerToEditProfileEmployer(false)
             )
         }
     }
 
-    private fun initAdapters() {
-        binding.recyclerProfileEmployer.layoutManager = LinearLayoutManager(context)
-        vacancyAdapter = VacancyAdapter { vacancy -> onItemClick(vacancy) }
-        binding.recyclerProfileEmployer.adapter = vacancyAdapter
-        imageAdapter = ViewPager2Adapter(images1)
-        binding.viewpagerProfileEmployer.adapter = imageAdapter
+    private fun setMotionProgress(binding: FragmentProfileEmployerBinding, motionProgress: Float) {
+        with(binding) {
+            motionLayout.progress = motionProgress
+        }
+    }
 
-        TabLayoutMediator(
-            binding.tablayoutProfileEmployer,
-            binding.viewpagerProfileEmployer
-        ) { tab, position ->
-            tab.view.isClickable = false
-        }.attach()
+    private fun initAdapters(binding: FragmentProfileEmployerBinding) {
+        with(binding) {
+            recyclerProfileEmployer.layoutManager = LinearLayoutManager(context)
+            vacancyAdapter = VacancyAdapter { vacancy -> onItemClick(vacancy) }
+            recyclerProfileEmployer.adapter = vacancyAdapter
+            imageAdapter = ViewPager2Adapter(images1)
+            viewpagerProfileEmployer.adapter = imageAdapter
+
+            TabLayoutMediator(
+                tablayoutProfileEmployer,
+                viewpagerProfileEmployer
+            ) { tab, position ->
+                tab.view.isClickable = false
+            }.attach()
+        }
+
     }
 
     private fun onItemClick(vacancy: Vacancy) {
@@ -99,6 +106,6 @@ class ProfileEmployerFragment : Fragment() {
 
     override fun onDetach() {
         super.onDetach()
-        callbacks = null
+        navBarCallbacks = null
     }
 }

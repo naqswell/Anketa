@@ -182,12 +182,15 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_home" />
+                app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_home"
+                />
             <CustomAttribute
                 app:attributeName="elevation"
                 app:customFloatValue="15" />
+<!--            <PropertySet-->
+<!--                android:alpha="0"-->
+<!--                />-->
         </Constraint>
-
         <Constraint android:id="@id/cardThree">
             <Layout
                 android:layout_width="@dimen/card_width"

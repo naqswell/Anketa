@@ -125,8 +125,36 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/viewpager2"
+<!--            <androidx.viewpager2.widget.ViewPager2-->
+<!--                android:id="@+id/viewpager2"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="0dp"-->
+<!--                android:orientation="horizontal"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHeight_percent="0.45"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintVertical_bias="0" />-->
+
+<!--            <com.google.android.material.tabs.TabLayout-->
+<!--                android:id="@+id/tablayout2"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@android:color/transparent"-->
+<!--                android:clickable="false"-->
+<!--                app:layout_constraintBottom_toBottomOf="@+id/viewpager2"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintVertical_bias="1"-->
+<!--                app:tabBackground="@drawable/tab_selector"-->
+<!--                app:tabGravity="center"-->
+<!--                app:tabIndicatorHeight="0dp"-->
+<!--                app:tabMaxWidth="@dimen/_10sdp" />-->
+
+            <ImageView
+                android:id="@+id/image_card_two"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:orientation="horizontal"
@@ -135,23 +163,10 @@
                 app:layout_constraintHeight_percent="0.45"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0" />
-
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tablayout2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:clickable="false"
-                app:layout_constraintBottom_toBottomOf="@+id/viewpager2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1"
-                app:tabBackground="@drawable/tab_selector"
-                app:tabGravity="center"
-                app:tabIndicatorHeight="0dp"
-                app:tabMaxWidth="@dimen/_10sdp" />
+                app:layout_constraintVertical_bias="0"
+                tools:ignore="ContentDescription"
+                android:scaleType="centerCrop"
+                />
 
             <ImageView
                 android:id="@+id/img_rating_profile2"
@@ -159,11 +174,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_16sdp"
                 android:src="@drawable/rating_circle"
-                app:layout_constraintBottom_toBottomOf="@+id/viewpager2"
+                app:layout_constraintBottom_toBottomOf="@+id/image_card_two"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/viewpager2"
+                app:layout_constraintTop_toBottomOf="@+id/image_card_two"
                 tools:ignore="ContentDescription" />
 
             <TextView
@@ -171,7 +186,6 @@
                 style="@style/CustomTitleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="4.9"
                 app:layout_constraintBottom_toBottomOf="@+id/img_rating_profile2"
                 app:layout_constraintEnd_toEndOf="@+id/img_rating_profile2"
                 app:layout_constraintStart_toStartOf="@+id/img_rating_profile2"
@@ -243,11 +257,10 @@
                 android:layout_marginStart="@dimen/_16sdp"
                 android:layout_marginTop="@dimen/_16sdp"
                 android:layout_marginEnd="@dimen/_200sdp"
-                android:text="Официант"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/viewpager2"
+                app:layout_constraintTop_toBottomOf="@+id/image_card_two"
                 app:layout_constraintVertical_bias="0" />
 
             <TextView
@@ -256,7 +269,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"
-                android:text="Оксана Васильева"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
@@ -285,7 +297,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_8sdp"
-                android:text="Санкт-Петербург"
                 app:layout_constraintBottom_toBottomOf="@+id/title_city2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
@@ -315,7 +326,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_8sdp"
                 android:layout_marginEnd="@dimen/_8sdp"
-                android:text="70 000 - 90 000 руб"
                 app:layout_constraintBottom_toBottomOf="@+id/title_salary2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
@@ -346,7 +356,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_8sdp"
                 android:layout_marginTop="@dimen/_16sdp"
-                android:text="более 5-ти лет"
                 app:layout_constraintBottom_toBottomOf="@+id/title_experience2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
@@ -376,7 +385,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_8sdp"
                 android:layout_marginTop="@dimen/_16sdp"
-                android:text="4"
                 app:layout_constraintBottom_toBottomOf="@+id/title_reviews2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
@@ -430,9 +438,10 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0" />
 
+
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tablayout"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:clickable="false"
@@ -444,7 +453,8 @@
                 app:tabBackground="@drawable/tab_selector"
                 app:tabGravity="center"
                 app:tabIndicatorHeight="0dp"
-                app:tabMaxWidth="@dimen/_10sdp" />
+                app:tabMaxWidth="@dimen/_10sdp"
+                 />
 
             <ImageView
                 android:id="@+id/img_rating_profile"
@@ -464,7 +474,6 @@
                 style="@style/CustomTitleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="4.9"
                 app:layout_constraintBottom_toBottomOf="@+id/img_rating_profile"
                 app:layout_constraintEnd_toEndOf="@+id/img_rating_profile"
                 app:layout_constraintStart_toStartOf="@+id/img_rating_profile"
@@ -493,7 +502,8 @@
                 app:cardCornerRadius="@dimen/_200sdp"
                 app:layout_constraintBottom_toBottomOf="@+id/btn_edit"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/btn_edit"></androidx.cardview.widget.CardView>
+                app:layout_constraintStart_toEndOf="@+id/btn_edit">
+            </androidx.cardview.widget.CardView>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLike"
@@ -535,7 +545,6 @@
                 android:layout_marginStart="@dimen/_16sdp"
                 android:layout_marginTop="@dimen/_16sdp"
                 android:layout_marginEnd="@dimen/_200sdp"
-                android:text="Официант"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -548,7 +557,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"
-                android:text="Оксана Васильева"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
@@ -577,7 +585,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_8sdp"
-                android:text="Санкт-Петербург"
                 app:layout_constraintBottom_toBottomOf="@+id/title_city"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
@@ -607,7 +614,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_8sdp"
                 android:layout_marginEnd="@dimen/_8sdp"
-                android:text="70 000 - 90 000 руб"
                 app:layout_constraintBottom_toBottomOf="@+id/title_salary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
@@ -638,7 +644,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_8sdp"
                 android:layout_marginTop="@dimen/_16sdp"
-                android:text="более 5-ти лет"
                 app:layout_constraintBottom_toBottomOf="@+id/title_experience"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
@@ -668,7 +673,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_8sdp"
                 android:layout_marginTop="@dimen/_16sdp"
-                android:text="4"
                 app:layout_constraintBottom_toBottomOf="@+id/title_reviews"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
@@ -698,6 +702,5 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
-
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

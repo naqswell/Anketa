@@ -49,12 +49,30 @@
             app:popUpTo="@+id/navigation_vacancy"
             app:popUpToInclusive="true">
         </action>
+
+        <argument
+            android:name="motionProgress"
+            app:argType="float"
+            android:defaultValue="0"
+             />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_vacancy"
         android:name="com.example.anketa.screen.profile.VacancyFragment"
         tools:layout="@layout/fragment_vacancy">
+
+        <action
+            android:id="@+id/action_to_profile"
+            app:destination="@id/navigation_profile_employer"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@+id/navigation_profile_employer"
+            app:popUpToInclusive="true">
+        </action>
+
         <argument
             android:name="vacancy"
             app:argType="com.example.anketa.data.profile.Vacancy"
